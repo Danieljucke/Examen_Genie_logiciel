@@ -5,7 +5,12 @@ using System.Data.SqlClient;
 
 namespace Examen_Génie_Logicielle.Class
 {
-    class module
+   public class module
     {
+        public module()
+        {
+
+        }
+
     }
 }

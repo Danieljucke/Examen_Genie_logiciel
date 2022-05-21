@@ -8,8 +8,6 @@ namespace Examen_Génie_Logicielle.Class
 {
     class Connexion
     {
-        string linkToBdd = Toolkit.test;
-
         public void Registre(string mail, string nom, string mot_passe)
         {
             SqlConnection link = new SqlConnection(linkToBdd);

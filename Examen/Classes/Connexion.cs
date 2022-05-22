@@ -23,17 +23,17 @@ namespace Examen.Classes
             u.commandeBDD(req);
             try
             {
-                SqlDataReader retourner = u._cmd.ExecuteReader();
+                SqlDataReader retourner = u.get_cmd().ExecuteReader();
                 while (retourner.Read())
                 {
                     recup = retourner.GetString(0);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show(""+ex);
+                MessageBox.Show("" + ex);
             }
-           
+            u.deconnexionBDD();
             return recup; 
         }
         // pour inscription il suffira de mettre en parametre le nom et le mot de passe et il va l'enregistrer dans la basse de données
@@ -46,7 +46,7 @@ namespace Examen.Classes
             u.commandeBDD(req);
             try
             {
-                int chekRespondBDD = u._cmd.ExecuteNonQuery();
+                int chekRespondBDD = u.get_cmd().ExecuteNonQuery();
                 if (chekRespondBDD == 1)
                     MessageBox.Show("Inscription Reussi");
                 else
@@ -56,6 +56,7 @@ namespace Examen.Classes
             {
                 MessageBox.Show("" + ex);
             }
+            u.deconnexionBDD();
         }
         // motde passe oublié va se charger de changer le mot de passe et de checker si le username est bien present dans la base de données avant d'effectuer le changement
         public void motDePasseOublie(string Utilisateur,string motDePasse)
@@ -64,17 +65,18 @@ namespace Examen.Classes
             req = "";
             u.connexionBaseDD();
             u.commandeBDD(req);
+            
             try
             {
-                SqlDataReader voirUsername = u._cmd.ExecuteReader();
+                SqlDataReader voirUsername = u.get_cmd().ExecuteReader();
                 while (voirUsername.Read())
                     prendreUtilisateur = voirUsername.GetString(0);
                 if (prendreUtilisateur == Utilisateur)
                 {
                     req = "update connexion set mot_de_passe ='"+motDePasse+"' where username='"+Utilisateur+"'";
                     u.commandeBDD(req);
-                    int checkeoperation = u._cmd.ExecuteNonQuery();
-                    if (checkeoperation == 1)
+                    int checkoperation = u.nombreLignes(Utilisateur, "connexion",motDePasse);
+                    if (checkoperation < 0)
                         MessageBox.Show("le mot de passe a été chnagé avec succès");
                     else
                         MessageBox.Show("l'opération n'a pas abouti");
@@ -83,14 +85,12 @@ namespace Examen.Classes
                 {
                     MessageBox.Show("ce compte n'existe pas");
                 }
+                u.deconnexionBDD();
             }
             catch(Exception ex)
             {
                 MessageBox.Show("" + ex);
             }
-            
-
-
         }
     }
 }

@@ -1,25 +1,67 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Data;
+using System.Windows.Forms;
 using System.Data.SqlClient;
 
 namespace Examen.Classes
 {
     class Toolkit
     {
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: parti variables ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         private string chaine { get; set; }
-        public SqlConnection connexion;
-        public SqlCommand _cmd;
+        protected string req;
+        protected SqlConnection connexion;
+        protected SqlCommand _cmd;
+        protected DataSet MonDataSet;
+        protected SqlDataAdapter _da;
+//::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: parti base de données :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        public SqlCommand get_cmd()
+        {
+            return _cmd;
+        }
         // a la place de créer des connexion dans toutes les classe il suffira de faire appel a cette methode pour créer une connexion avec la base de données 
         public void connexionBaseDD()
         {
-            connexion = new SqlConnection(chaine);
-            connexion.Open();
+            if (connexion.State==ConnectionState.Closed)
+            {
+                connexion = new SqlConnection(chaine);
+                connexion.Open();
+            }
+            
+        }
+        // ferme la connexion a la base de données
+        public void deconnexionBDD()
+        {
+            if (connexion.State == ConnectionState.Open)
+                connexion.Close();
         }
         public void commandeBDD(string requete)
         {
             _cmd = new SqlCommand(requete, connexion);
         }
+
+        public void AfficherDataGrid (string table, DataGridView da)
+        {
+            req = "select * from " + table;
+            connexionBaseDD();
+            commandeBDD(req);
+            _da.SelectCommand = _cmd;
+            _da.Fill(MonDataSet, "DT" + table);
+            da.DataSource = MonDataSet.Tables["DT"+table];
+            deconnexionBDD();
+        }
+
+        public int nombreLignes(string champ, string table, string valeur)
+        {
+            req = "select count (*) from "+table+"where"+champ+"="+valeur;
+            connexionBaseDD();
+            int compte = int.Parse(_cmd.ExecuteScalar().ToString());
+            return compte;
+        }
+//::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: parti mot de passe ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
         // cette methode c'est pour convertir le mot de passe que l'utilisateur va saisir lors de son inregistremment
         public string ConvertirMotdepasse(string password)
         {
@@ -48,6 +90,10 @@ namespace Examen.Classes
             deconvert.GetChars(adecoder, 0, adecoder.Length, decoder, 0);
             string resultat = new string(decoder);
             return resultat;
+        }
+        public void afficher ()
+        {
+
         }
     }
 }

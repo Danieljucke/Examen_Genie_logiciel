@@ -1,0 +1,17 @@
+C:\Users\jucke\source\repos\exemple\bin\Debug\netcoreapp3.1\exemple.exe
+C:\Users\jucke\source\repos\exemple\bin\Debug\netcoreapp3.1\exemple.deps.json
+C:\Users\jucke\source\repos\exemple\bin\Debug\netcoreapp3.1\exemple.runtimeconfig.json
+C:\Users\jucke\source\repos\exemple\bin\Debug\netcoreapp3.1\exemple.runtimeconfig.dev.json
+C:\Users\jucke\source\repos\exemple\bin\Debug\netcoreapp3.1\exemple.dll
+C:\Users\jucke\source\repos\exemple\bin\Debug\netcoreapp3.1\exemple.pdb
+C:\Users\jucke\source\repos\exemple\obj\Debug\netcoreapp3.1\exemple.csprojAssemblyReference.cache
+C:\Users\jucke\source\repos\exemple\obj\Debug\netcoreapp3.1\exemple.exemple.resources
+C:\Users\jucke\source\repos\exemple\obj\Debug\netcoreapp3.1\exemple.Form1.resources
+C:\Users\jucke\source\repos\exemple\obj\Debug\netcoreapp3.1\exemple.csproj.GenerateResource.cache
+C:\Users\jucke\source\repos\exemple\obj\Debug\netcoreapp3.1\exemple.AssemblyInfoInputs.cache
+C:\Users\jucke\source\repos\exemple\obj\Debug\netcoreapp3.1\exemple.AssemblyInfo.cs
+C:\Users\jucke\source\repos\exemple\obj\Debug\netcoreapp3.1\exemple.csproj.CoreCompileInputs.cache
+C:\Users\jucke\source\repos\exemple\obj\Debug\netcoreapp3.1\exemple.dll
+C:\Users\jucke\source\repos\exemple\obj\Debug\netcoreapp3.1\exemple.pdb
+C:\Users\jucke\source\repos\exemple\obj\Debug\netcoreapp3.1\exemple.genruntimeconfig.cache
+C:\Users\jucke\source\repos\exemple\obj\Debug\netcoreapp3.1\exemple.exemple2.resources

@@ -74,6 +74,7 @@ namespace Examen.Classes
                     MessageBox.Show("" + ex);
                 }
             }
+            t.deconnexionBDD();
         }
     }
 }

@@ -39,9 +39,8 @@ CREATE TABLE Salle(
 -- Table: Options
 ------------------------------------------------------------*/
 CREATE TABLE Options(
-	id_option    INT  NOT NULL ,
 	Nom_option   VARCHAR (30) NOT NULL  ,
-	CONSTRAINT Options_PK PRIMARY KEY (id_option)
+	CONSTRAINT Options_PK PRIMARY KEY (Nom_option)
 );
 
 
@@ -49,9 +48,8 @@ CREATE TABLE Options(
 -- Table: parcours
 ------------------------------------------------------------*/
 CREATE TABLE parcours(
-	id_parcours    INT  NOT NULL ,
 	nom_parcours   VARCHAR (10) NOT NULL  ,
-	CONSTRAINT parcours_PK PRIMARY KEY (id_parcours)
+	CONSTRAINT parcours_PK PRIMARY KEY (nom_parcours)
 );
 
 
@@ -70,12 +68,12 @@ CREATE TABLE etudiant(
 	Email               VARCHAR (50) NOT NULL ,
 	Frais               INT  NOT NULL ,
 	AnneeObtentionBac   VARCHAR (15) NOT NULL ,
-	id_option           INT  NOT NULL ,
-	id_parcours         INT  NOT NULL  ,
+	Nom_option          VARCHAR (30) NOT NULL ,
+	nom_parcours        VARCHAR (10) NOT NULL  ,
 	CONSTRAINT etudiant_PK PRIMARY KEY (CNE)
 
-	,CONSTRAINT etudiant_Options_FK FOREIGN KEY (id_option) REFERENCES Options(id_option)
-	,CONSTRAINT etudiant_parcours0_FK FOREIGN KEY (id_parcours) REFERENCES parcours(id_parcours)
+	,CONSTRAINT etudiant_Options_FK FOREIGN KEY (Nom_option) REFERENCES Options(Nom_option)
+	,CONSTRAINT etudiant_parcours0_FK FOREIGN KEY (nom_parcours) REFERENCES parcours(nom_parcours)
 );
 
 
@@ -83,10 +81,9 @@ CREATE TABLE etudiant(
 -- Table: Classe
 ------------------------------------------------------------*/
 CREATE TABLE Classe(
-	id_classe       INT  NOT NULL ,
 	nom_classe      VARCHAR (20) NOT NULL ,
 	niveau_classe   VARCHAR (20) NOT NULL  ,
-	CONSTRAINT Classe_PK PRIMARY KEY (id_classe)
+	CONSTRAINT Classe_PK PRIMARY KEY (nom_classe)
 );
 
 
@@ -94,14 +91,13 @@ CREATE TABLE Classe(
 -- Table: Module
 ------------------------------------------------------------*/
 CREATE TABLE Module(
-	id_module          INT  NOT NULL ,
 	Nom_Module         VARCHAR (30) NOT NULL ,
 	Moyenne_generale   INT  NOT NULL ,
 	charge_horaire     INT  NOT NULL ,
-	id_classe          INT  NOT NULL  ,
-	CONSTRAINT Module_PK PRIMARY KEY (id_module)
+	nom_classe         VARCHAR (20) NOT NULL  ,
+	CONSTRAINT Module_PK PRIMARY KEY (Nom_Module)
 
-	,CONSTRAINT Module_Classe_FK FOREIGN KEY (id_classe) REFERENCES Classe(id_classe)
+	,CONSTRAINT Module_Classe_FK FOREIGN KEY (nom_classe) REFERENCES Classe(nom_classe)
 );
 
 
@@ -109,16 +105,15 @@ CREATE TABLE Module(
 -- Table: Cours
 ------------------------------------------------------------*/
 CREATE TABLE Cours(
-	id_cours    INT  NOT NULL ,
-	Nom_cours   VARCHAR (50) NOT NULL ,
-	id_salle    INT  NOT NULL ,
-	CIN         INT  NOT NULL ,
-	id_module   INT  NOT NULL  ,
-	CONSTRAINT Cours_PK PRIMARY KEY (id_cours)
+	Nom_cours    VARCHAR (50) NOT NULL ,
+	id_salle     INT  NOT NULL ,
+	CIN          INT  NOT NULL ,
+	Nom_Module   VARCHAR (30) NOT NULL  ,
+	CONSTRAINT Cours_PK PRIMARY KEY (Nom_cours)
 
 	,CONSTRAINT Cours_Salle_FK FOREIGN KEY (id_salle) REFERENCES Salle(id_salle)
 	,CONSTRAINT Cours_Professeur0_FK FOREIGN KEY (CIN) REFERENCES Professeur(CIN)
-	,CONSTRAINT Cours_Module1_FK FOREIGN KEY (id_module) REFERENCES Module(id_module)
+	,CONSTRAINT Cours_Module1_FK FOREIGN KEY (Nom_Module) REFERENCES Module(Nom_Module)
 );
 
 

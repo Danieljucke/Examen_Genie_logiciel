@@ -18,7 +18,7 @@ namespace Examen.Classes
         public string connexion (string utilisateur)
         {
             string recup="";
-            req = "select mot_de_passe from table connexion where utilisateur='" + utilisateur + "'";
+            req = "select mot_de_passe from table connexion where Nom_utilisateur='" + utilisateur + "'";
             u.connexionBaseDD();
             u.commandeBDD(req);
             try
@@ -45,7 +45,7 @@ namespace Examen.Classes
                 MessageBox.Show("le Mot de passe n'est pas le même");
             else
             {
-                req = "insert into connexion ('" + username + "','" + motDePasse + "','" + email + "')";
+                req = "insert into connexion values ('" + username + "','" + motDePasse + "','" + email + "')";
                 u.connexionBaseDD();
                 u.commandeBDD(req);
                 try
@@ -70,7 +70,6 @@ namespace Examen.Classes
             req = "";
             u.connexionBaseDD();
             u.commandeBDD(req);
-            
             try
             {
                 SqlDataReader voirUsername = u.get_cmd().ExecuteReader();
@@ -78,7 +77,7 @@ namespace Examen.Classes
                     prendreUtilisateur = voirUsername.GetString(0);
                 if (prendreUtilisateur == Utilisateur)
                 {
-                    req = "update connexion set mot_de_passe ='"+motDePasse+"' where username='"+Utilisateur+"'";
+                    req = "update connexion set Mot_de_passe ='"+motDePasse+"' where Nom_utilisateur='"+Utilisateur+"'";
                     u.commandeBDD(req);
                     int checkoperation = u.nombreLignes(Utilisateur, "connexion",motDePasse);
                     if (checkoperation < 0)

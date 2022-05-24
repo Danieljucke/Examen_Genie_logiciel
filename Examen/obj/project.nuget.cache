@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UEnSTHPxUhHtcuwthoChFkgvKwYesRWxFd9g/qH56Zk0y3i3bFLpdbFXpx293R7bj/DLUtofit5SmQJLxvARXw==",
+  "dgSpecHash": "JpcXh2qtbD19BdD9PY9S/YAxLv1IihT3iZREamjdieOzMGYLHvemQLeuLdGn+7RdlXWD+aLngxha3d6qjDdWrw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jucke\\source\\repos\\Examen\\Examen.csproj",
+  "projectFilePath": "C:\\Users\\jucke\\Documents\\Examen\\Examen.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jucke\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\jucke\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

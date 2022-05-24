@@ -11,16 +11,16 @@ namespace Examen.Classes
         protected string requette;
         protected int compte;
         Toolkit t = new Toolkit();
-        public void Ajoutercours(int id, string nom)
+        public void Ajoutercours(string cours )
         {
             t.connexionBaseDD();
-            requette = "insert into cours values ('" + id + "','" + nom + "')";
+            requette = "insert into cours values ('" + cours + "')";
             t.commandeBDD(requette);
             try
             {
                 compte = t.get_cmd().ExecuteNonQuery();
                 if (compte < 0)
-                    MessageBox.Show("Il existe déjà un cours ayant " + id + " comme identifiant");
+                    MessageBox.Show("Il existe déjà un cours ayant " + cours + " comme nom");
                 else
                     MessageBox.Show("Enregistrment Reussi");
             }
@@ -30,10 +30,11 @@ namespace Examen.Classes
             }
             t.deconnexionBDD();
         }
-        public void Modifiercours(string valeur, string nom)
+    
+        public void Modifiercours(string cours, int id_salle, int cin, string module)
         {
             t.connexionBaseDD();
-            requette = "update cours set nomcours ='" + valeur + "' where nomcours= '" + nom + "'";
+            requette = "update cours set id_salle ='" + id_salle + "', CIN='"+cin+"', Nom_Module='"+module+"' where nomcours= '" + cours + "'";
             t.commandeBDD(requette);
             try
             {
@@ -53,10 +54,10 @@ namespace Examen.Classes
             }
             t.deconnexionBDD();
         }
-        public void Supprimercours(int id)
+        public void Supprimercours(string cours)
         {
             t.connexionBaseDD();
-            requette = "delete from cours where id='" + id + "'";
+            requette = "delete from cours where id='" +cours+ "'";
             t.commandeBDD(requette);
             DialogResult re = MessageBox.Show("Voulez-vous vraiment supprimer ce parcous", "Confirmation", MessageBoxButtons.YesNoCancel);
             if (re == DialogResult.Yes)

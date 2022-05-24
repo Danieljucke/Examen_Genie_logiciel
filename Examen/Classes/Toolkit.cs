@@ -91,9 +91,33 @@ namespace Examen.Classes
             string resultat = new string(decoder);
             return resultat;
         }
-        public void afficher ()
-        {
 
+//::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: partie outils :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        
+        // cette fonction va incrementer de 1  chaque id lors d'un ajout dans une table quelconque 
+        //elle se prensentera comme suit ex: cne = nextcode(etduiant,cne);
+        public int nextcode(string table, string key)
+        {
+            string requete= "select SELECT MAX('"+key+"') + 1 FROM '"+table+"'";
+            int lastcode=0;
+            int next_code=0;
+            connexionBaseDD();
+            commandeBDD(requete);
+            try
+            {
+                SqlDataReader r = _cmd.ExecuteReader();
+                while (r.Read())
+                    lastcode = int.Parse(r.GetValue(0).ToString());
+            if (lastcode == 0)
+                next_code = 0;
+            else
+                next_code = lastcode + 1;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("" + ex);
+            }
+            return next_code;
         }
     }
 }

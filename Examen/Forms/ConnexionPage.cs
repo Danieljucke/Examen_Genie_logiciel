@@ -24,5 +24,10 @@ namespace Examen.Forms
         {
 
         }
+
+        private void Login_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

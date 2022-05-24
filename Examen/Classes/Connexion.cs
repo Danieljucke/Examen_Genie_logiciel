@@ -39,24 +39,29 @@ namespace Examen.Classes
         // pour inscription il suffira de mettre en parametre le nom et le mot de passe et il va l'enregistrer dans la basse de données
         // ps il faudra convertir le mot de passe avant de le passer en paramettre dans la méthode inscription
         // la méthode convertir mot de passe se trouve dans la classe toolkit
-        public void inscription(string username, string motDePasse)
+        public void inscription(string username, string motDePasse, string email, string Confirmpassword)
         {
-            req= "insert into _ values ('" + username + "','" + motDePasse + "')";
-            u.connexionBaseDD();
-            u.commandeBDD(req);
-            try
+            if (!motDePasse.Equals(Confirmpassword))//compare si le mot de passe correspont au champs confirmer mot de passe
+                MessageBox.Show("le Mot de passe n'est pas le même");
+            else
             {
-                int chekRespondBDD = u.get_cmd().ExecuteNonQuery();
-                if (chekRespondBDD == 1)
-                    MessageBox.Show("Inscription Reussi");
-                else
-                    MessageBox.Show("Il existe déjà un utilsateur à ce nom ");
+                req = "insert into connexion ('" + username + "','" + motDePasse + "','" + email + "')";
+                u.connexionBaseDD();
+                u.commandeBDD(req);
+                try
+                {
+                    int chekRespondBDD = u.get_cmd().ExecuteNonQuery();
+                    if (chekRespondBDD == 1)
+                        MessageBox.Show("Inscription Reussi");
+                    else
+                        MessageBox.Show("Il existe déjà un utilsateur à ce nom ");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("" + ex);
+                }
+                u.deconnexionBDD();
             }
-            catch(Exception ex )
-            {
-                MessageBox.Show("" + ex);
-            }
-            u.deconnexionBDD();
         }
         // motde passe oublié va se charger de changer le mot de passe et de checker si le username est bien present dans la base de données avant d'effectuer le changement
         public void motDePasseOublie(string Utilisateur,string motDePasse)

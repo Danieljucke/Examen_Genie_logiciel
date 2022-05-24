@@ -59,7 +59,7 @@ namespace Examen.Classes
 
 
             t.connexionBaseDD();
-            requette = "insert into etudiant values ('" + cne + "','" + nom + "')";
+            requette = "insert into etudiant values ('" + cne + "','" + nom + "','" + postnom + "','" + prenom + "','" + sex + "','" + adress + "','" + faculte + "','" + option + "','" + phone + "','" + birthdate + "','" + level + "')";
             t.commandeBDD(requette);
             try
             {

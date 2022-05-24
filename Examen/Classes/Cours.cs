@@ -58,7 +58,7 @@ namespace Examen.Classes
             t.connexionBaseDD();
             requette = "delete from cours where id='" + id + "'";
             t.commandeBDD(requette);
-            DialogResult re = MessageBox.Show("Vouslez vous vraiment supprimer ce parcous", "Confirmation", MessageBoxButtons.YesNoCancel);
+            DialogResult re = MessageBox.Show("Voulez-vous vraiment supprimer ce parcous", "Confirmation", MessageBoxButtons.YesNoCancel);
             if (re == DialogResult.Yes)
             {
                 try

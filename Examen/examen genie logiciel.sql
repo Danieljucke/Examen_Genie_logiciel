@@ -36,12 +36,12 @@ CREATE TABLE Salle(
 
 
 /*------------------------------------------------------------
--- Table: Option
+-- Table: Options
 ------------------------------------------------------------*/
-CREATE TABLE Option(
+CREATE TABLE Options(
 	id_option    INT  NOT NULL ,
 	Nom_option   VARCHAR (30) NOT NULL  ,
-	CONSTRAINT Option_PK PRIMARY KEY (id_option)
+	CONSTRAINT Options_PK PRIMARY KEY (id_option)
 );
 
 
@@ -74,7 +74,7 @@ CREATE TABLE etudiant(
 	id_parcours         INT  NOT NULL  ,
 	CONSTRAINT etudiant_PK PRIMARY KEY (CNE)
 
-	,CONSTRAINT etudiant_Option_FK FOREIGN KEY (id_option) REFERENCES Option(id_option)
+	,CONSTRAINT etudiant_Options_FK FOREIGN KEY (id_option) REFERENCES Options(id_option)
 	,CONSTRAINT etudiant_parcours0_FK FOREIGN KEY (id_parcours) REFERENCES parcours(id_parcours)
 );
 
@@ -128,34 +128,35 @@ CREATE TABLE Cours(
 CREATE TABLE PayementFrais(
 	numero_facture   INT  NOT NULL ,
 	typePayement     VARCHAR (10) NOT NULL ,
-	montatApayer     INT  NOT NULL  ,
+	montatApayer     INT  NOT NULL ,
+	CNE              INT  NOT NULL  ,
 	CONSTRAINT PayementFrais_PK PRIMARY KEY (numero_facture)
+
+	,CONSTRAINT PayementFrais_etudiant_FK FOREIGN KEY (CNE) REFERENCES etudiant(CNE)
 );
 
 
 /*------------------------------------------------------------
--- Table:  Etre assigner 
+-- Table: Connexion
 ------------------------------------------------------------*/
-CREATE TABLE Etre_assigner(
+CREATE TABLE Connexion(
+	Username   VARCHAR (50) NOT NULL ,
+	Password   VARCHAR (50) NOT NULL ,
+	Email      VARCHAR (50) NOT NULL  ,
+	CONSTRAINT Connexion_PK PRIMARY KEY (Username)
+);
+
+
+/*------------------------------------------------------------
+-- Table: assigner
+------------------------------------------------------------*/
+CREATE TABLE assigner(
 	id_salle   INT  NOT NULL ,
 	CIN        INT  NOT NULL  ,
-	CONSTRAINT Etre_assigner_PK PRIMARY KEY (id_salle,CIN)
+	CONSTRAINT assigner_PK PRIMARY KEY (id_salle,CIN)
 
-	,CONSTRAINT Etre_assigner_Salle_FK FOREIGN KEY (id_salle) REFERENCES Salle(id_salle)
-	,CONSTRAINT Etre_assigner_Professeur0_FK FOREIGN KEY (CIN) REFERENCES Professeur(CIN)
-);
-
-
-/*------------------------------------------------------------
--- Table: Payer
-------------------------------------------------------------*/
-CREATE TABLE Payer(
-	CNE              INT  NOT NULL ,
-	numero_facture   INT  NOT NULL  ,
-	CONSTRAINT Payer_PK PRIMARY KEY (CNE,numero_facture)
-
-	,CONSTRAINT Payer_etudiant_FK FOREIGN KEY (CNE) REFERENCES etudiant(CNE)
-	,CONSTRAINT Payer_PayementFrais0_FK FOREIGN KEY (numero_facture) REFERENCES PayementFrais(numero_facture)
+	,CONSTRAINT assigner_Salle_FK FOREIGN KEY (id_salle) REFERENCES Salle(id_salle)
+	,CONSTRAINT assigner_Professeur0_FK FOREIGN KEY (CIN) REFERENCES Professeur(CIN)
 );
 
 

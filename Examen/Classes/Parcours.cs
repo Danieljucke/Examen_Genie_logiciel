@@ -30,7 +30,8 @@ namespace Examen.Classes
             }
             t.deconnexionBDD();
         }
-        public void ModifierParcours (string valeur, string nom)
+// etant donner que nous avons qu'un seul champs dans parcours la methode modifier n'a plus lieu d'etre
+        /*public void ModifierParcours (string valeur, string nom)
         {
             t.connexionBaseDD();
             requette = "update Parcours set nomParcours ='"+valeur+"' where nomParcours= '"+nom+"'";
@@ -52,7 +53,7 @@ namespace Examen.Classes
                 MessageBox.Show("" + ex);
             }
             t.deconnexionBDD();
-        }
+        }*/
         public void SupprimerParcours(int id)
         {
             t.connexionBaseDD();

@@ -20,10 +20,11 @@ namespace Examen.Classes
 
 
         // Méthodes
-        public void AjouterSalle(int id, string nom)
+        public void AjouterSalle(int id, string nom,string type, int capacite)
         {
+            id=t.nextcode("salle","id_salle");
             t.connexionBaseDD();
-            requette = "insert into salle values ('" + id + "','" + nom + "')";
+            requette = "insert into salle values ('" + id + "','" + type + "','" + capacite + "')";
             t.commandeBDD(requette);
             try
             {
@@ -39,8 +40,24 @@ namespace Examen.Classes
             }
             t.deconnexionBDD();
         }
-        public void ModifierSalle()
+        public void ModifierSalle(int id, string nom, string type, int capacite)
         {
+            requette ="update salle set Nom_salle='"+nom+"', Type_salle='"+type+"', capacite='"+capacite+"' where id_salle='"+id+"'";
+            t.connexionBaseDD();
+            t.commandeBDD(requette);
+            try
+            {
+                compte = t.get_cmd().ExecuteNonQuery();
+                if (compte < 0)
+                    MessageBox.Show("Il existe pas de salle ayant " + id + " comme identifiant");
+                else
+                    MessageBox.Show("Modification Reussi!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("" + ex);
+            }
+            t.deconnexionBDD();
 
         }
         public void SupprimerSalle(int id)

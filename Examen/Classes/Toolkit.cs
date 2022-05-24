@@ -60,6 +60,23 @@ namespace Examen.Classes
             int compte = int.Parse(_cmd.ExecuteScalar().ToString());
             return compte;
         }
+        /* cette methode aura comme parametre le mot que l'utilisateur va taper 
+          le nom de la table viendra du combobox 
+            le nom du champs c'est vous qui aller le mettre, c'est sera soit une recherche par nom ou par matricule p'etre 
+            et ainsi que le nom du datagridview 
+        cette methode doit etre placé dans une le textebox(bare de recherhce) avec comme evenement textchanged c'est lui qui va faire en sorte qu'a chaque fois que l'utilisateur 
+        saisir un mot il va permettre de faire une recherche
+        */
+        public void search (string Motrechercher,string table, string champtable ,DataGridView da)
+        {
+            req = "select * from '"+table+"' where '"+champtable+"'='"+Motrechercher+"'";
+            connexionBaseDD();
+            commandeBDD(req);
+            _da.SelectCommand = _cmd;
+            _da.Fill(MonDataSet, "DT" + table);
+            da.DataSource = MonDataSet.Tables["DT" + table];
+            deconnexionBDD();
+        }
 //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: parti mot de passe ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
         // cette methode c'est pour convertir le mot de passe que l'utilisateur va saisir lors de son inregistremment

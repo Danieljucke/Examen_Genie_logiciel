@@ -11,16 +11,16 @@ namespace Examen.Classes
         protected string requette;
         protected int compte;
         Toolkit t = new Toolkit();
-        public void AjouterModule(int id, string nom,int moyen,int duree )
+        public void AjouterModule(string nom,int moyen,int duree, string classe)
         {
             t.connexionBaseDD();
-            requette = "insert into Module values ('" + id + "','" + nom + "','" + moyen + "','" + duree + "')";
+            requette = "insert into Module values ('" + nom + "','" + moyen + "','" + duree + "', '"+classe+"')";
             t.commandeBDD(requette);
             try
             {
                 compte = t.get_cmd().ExecuteNonQuery();
                 if (compte < 0)
-                    MessageBox.Show("Il existe déjà un Module ayant " + id + " comme identifiant");
+                    MessageBox.Show("Il existe déjà un Module ayant " + nom + " comme nom");
                 else
                     MessageBox.Show("Enregistrment Reussi");
             }
@@ -30,10 +30,10 @@ namespace Examen.Classes
             }
             t.deconnexionBDD();
         }
-        public void ModifierModule(string valeur, string nom)
+        public void ModifierModule(string nom, string moyen, string dure, string classe)
         {
             t.connexionBaseDD();
-            requette = "update Module set nomModule ='" + valeur + "' where nomModule= '" + nom + "'";
+            requette = "update Module set Moyenne_general='"+moyen+"', chargec_horaire='"+dure+"', nom_classe='"+classe+"'  where nomModule= '" + nom + "'";
             t.commandeBDD(requette);
             try
             {
@@ -53,10 +53,10 @@ namespace Examen.Classes
             }
             t.deconnexionBDD();
         }
-        public void SupprimerModule(int id)
+        public void SupprimerModule(string nom)
         {
             t.connexionBaseDD();
-            requette = "delete from Module where id='" + id + "'";
+            requette = "delete from Module where Nom_module='" + nom + "'";
             t.commandeBDD(requette);
             DialogResult re = MessageBox.Show("Vouslez vous vraiment supprimer ce parcous", "Confirmation", MessageBoxButtons.YesNoCancel);
             if (re == DialogResult.Yes)

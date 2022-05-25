@@ -9,14 +9,32 @@ namespace Examen.Classes
 {
     class Toolkit
     {
-//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: parti variables ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-        private string chaine { get; set; }
+        //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: parti variables :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        protected string nom_server;
+        private string user_id;
+        private string password;
+        private string database;
+        private string chaine;
+        public string Nom_server  { get => nom_server ; private set => nom_server = value; }
+        public string User_id { get => user_id; private set => user_id = value; }
+        public string Password { get => password; private set => password = value; }
+        public string Database { get => database; private set => database = value; }
+        public string Chaine { get => Chaine; private set => Chaine = value; }
         protected string req;
         protected SqlConnection connexion;
         protected SqlCommand _cmd;
-        protected DataSet MonDataSet;
-        protected SqlDataAdapter _da;
+        public DataSet MonDataSet;
+        public SqlDataAdapter _da;
 //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: parti base de données :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        public void prendreDonneNewOrdinateur(string nomServer, string UserId, string _password, string _database)
+        {
+            this.Nom_server = nomServer;
+            this.User_id = UserId;
+            this.Password = _password;
+            this.Database=_database;
+            this.Chaine= "server='"+this.Nom_server+"', User Id='"+this.User_id+"', pwd='"+this.Password+"'; database='"+this.Database+"'";
+        }
+        
         public SqlCommand get_cmd()
         {
             return _cmd;

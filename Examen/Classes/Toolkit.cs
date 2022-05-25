@@ -19,14 +19,14 @@ namespace Examen.Classes
         public string User_id { get => user_id; private set => user_id = value; }
         public string Password { get => password; private set => password = value; }
         public string Database { get => database; private set => database = value; }
-        public string Chaine { get => Chaine; private set => Chaine = value; }
+        public string Chaine { get => chaine; private set => chaine = value; }
         protected string req;
         protected SqlConnection connexion;
         protected SqlCommand _cmd;
         public DataSet MonDataSet;
         public SqlDataAdapter _da;
 //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: parti base de données :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-        public void prendreDonneNewOrdinateur(string nomServer, string UserId, string _password, string _database)
+        public void prendreDataNewServeur(string nomServer, string UserId, string _password, string _database)
         {
             this.Nom_server = nomServer;
             this.User_id = UserId;

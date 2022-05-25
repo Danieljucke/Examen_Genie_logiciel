@@ -152,15 +152,5 @@ CREATE TABLE assigner(
 	,CONSTRAINT assigner_Professeur0_FK FOREIGN KEY (CIN) REFERENCES Professeur(CIN)
 );
 
-/*------------------------------------------------------------------------------------
--- Trigger : pour table etudiant 
-------------------------------------------------------------------------------------*/
-create trigger tg_updateFrais 
-on PayementFrais
-after insert 
-as declare @montant bigint 
-set @montant= (select montatApayer from inserted)
-update etudiant set 
-Frais =Frais+@Montant 
-where CNE=(select CNE from inserted)
+
 

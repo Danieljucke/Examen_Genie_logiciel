@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Forms;
 
 namespace Examen.Classes
 {
@@ -54,6 +55,25 @@ namespace Examen.Classes
         public void SupprimerProf()
         {
 
+        }
+        public void AssignerSalleProf(string id_salle, string cin)
+        {
+            t.connexionBaseDD();
+            requette = "insert into assigner values ('"+id_salle+"', '"+cin+"')";
+            t.commandeBDD(requette);
+            try
+            {
+                compte = t.get_cmd().ExecuteNonQuery();
+                if (compte < 0)
+                    MessageBox.Show("Assigation Echoué");
+                else
+                    MessageBox.Show("Assignation de la salle "+id_salle+" au professeur "+cin+" reussi!");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(""+ex);
+            }
+            t.deconnexionBDD();
         }
     }
 }

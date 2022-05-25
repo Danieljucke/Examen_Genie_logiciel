@@ -162,7 +162,7 @@ namespace Examen.Forms
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(813, 34);
+            this.panel2.Size = new System.Drawing.Size(781, 34);
             this.panel2.TabIndex = 1;
             // 
             // btnClose
@@ -171,7 +171,7 @@ namespace Examen.Forms
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Image = global::Examen.Properties.Resources.round_close_black_24pt_1x;
-            this.btnClose.Location = new System.Drawing.Point(771, 0);
+            this.btnClose.Location = new System.Drawing.Point(739, 0);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(42, 34);
             this.btnClose.TabIndex = 0;
@@ -184,7 +184,7 @@ namespace Examen.Forms
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Image = global::Examen.Properties.Resources.round_maximize_black_24pt_1x;
-            this.button2.Location = new System.Drawing.Point(729, 0);
+            this.button2.Location = new System.Drawing.Point(697, 0);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(42, 34);
             this.button2.TabIndex = 1;
@@ -197,7 +197,7 @@ namespace Examen.Forms
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Image = global::Examen.Properties.Resources.round_minimize_black_24pt_1x;
-            this.button3.Location = new System.Drawing.Point(687, 0);
+            this.button3.Location = new System.Drawing.Point(655, 0);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(42, 34);
             this.button3.TabIndex = 2;
@@ -221,7 +221,7 @@ namespace Examen.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(813, 547);
+            this.ClientSize = new System.Drawing.Size(781, 547);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

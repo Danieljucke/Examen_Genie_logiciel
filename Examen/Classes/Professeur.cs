@@ -44,36 +44,64 @@ namespace Examen.Classes
 
 
         // Méthodes
-        public void AjouterProf()
+        public void AjouterProf(string cin, string nom, string postnom, string prenom, char sex, string birthday, string adresse, string telephone, string email,string titre )
         {
-
-        }
-        public void ModifierProf()
-        {
-
-        }
-        public void SupprimerProf()
-        {
-
-        }
-        public void AssignerSalleProf(string id_salle, string cin)
-        {
+            requette = "insert into Professeur values ()";
             t.connexionBaseDD();
-            requette = "insert into assigner values ('"+id_salle+"', '"+cin+"')";
             t.commandeBDD(requette);
             try
             {
                 compte = t.get_cmd().ExecuteNonQuery();
                 if (compte < 0)
-                    MessageBox.Show("Assigation Echoué");
+                    MessageBox.Show("l'enregistrement n'a pas abouti car il existe un professeur ayant " + cin + " comme CIN");
                 else
-                    MessageBox.Show("Assignation de la salle "+id_salle+" au professeur "+cin+" reussi!");
+                    MessageBox.Show("Enregistrement Reussi!");
             }
             catch(Exception ex)
             {
-                MessageBox.Show(""+ex);
+                MessageBox.Show("" + ex);
             }
-            t.deconnexionBDD();
         }
+        public void ModifierProf(string cin, string nom, string postnom, string prenom, char sex, string birthday, string adresse, string telephone, string email, string titre)
+        {
+            requette = "Update Professeur set Nom='"+nom+"', Postnom='"+postnom+"', Prenom= '"+prenom+"', Sexe='"+sex+"', DateNaissance='"+birthday+"', Adresse='"+adresse+"', telephone ='"+telephone+"', email='"+email+"', titre='"+titre+"' where CIN='"+cin+"'";
+            t.connexionBaseDD();
+            t.commandeBDD(requette);
+            try
+            {
+                compte = t.get_cmd().ExecuteNonQuery();
+                if (compte < 0)
+                    MessageBox.Show("Il existe pas de Professeur ayant  " + cin + " comme CIN");
+                else
+                    MessageBox.Show("Modification Reussi!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("" + ex);
+            }
+        }
+        public void SupprimerProf(string cin)
+        {
+            requette = "delete from Professeur where CIN='"+cin+"'";
+            t.connexionBaseDD();
+            t.commandeBDD(requette);
+            DialogResult r= MessageBox.Show("voulez vous supprimer cet professeur","CONFIRMATION",MessageBoxButtons.YesNo);
+            if (r==DialogResult.Yes)
+            {
+                try
+                {
+                    compte = t.get_cmd().ExecuteNonQuery();
+                    if (compte < 0)
+                        MessageBox.Show("Il n'y pas de professeur ayant " + cin + " comme CIN ");
+                    else
+                        MessageBox.Show("suppression Reussi !");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("" + ex);
+                }
+            }
+        }
+        
     }
 }

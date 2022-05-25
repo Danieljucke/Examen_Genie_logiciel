@@ -4,5 +4,8 @@
     <Compile Update="Forms\ConnexionPage.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\DashboardEtudiant.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

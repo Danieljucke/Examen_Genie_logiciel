@@ -39,7 +39,7 @@ namespace Examen.Forms
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -93,6 +93,7 @@ namespace Examen.Forms
             this.Login.FlatAppearance.BorderSize = 0;
             this.Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Login.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Login.ForeColor = System.Drawing.Color.DarkGray;
             this.Login.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Login.Location = new System.Drawing.Point(174, 339);
             this.Login.Name = "Login";
@@ -157,24 +158,25 @@ namespace Examen.Forms
             // 
             this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.btnClose);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(813, 34);
             this.panel2.TabIndex = 1;
             // 
-            // button1
+            // btnClose
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::Examen.Properties.Resources.round_close_black_24pt_1x;
-            this.button1.Location = new System.Drawing.Point(771, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(42, 34);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Image = global::Examen.Properties.Resources.round_close_black_24pt_1x;
+            this.btnClose.Location = new System.Drawing.Point(771, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(42, 34);
+            this.btnClose.TabIndex = 0;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -187,6 +189,7 @@ namespace Examen.Forms
             this.button2.Size = new System.Drawing.Size(42, 34);
             this.button2.TabIndex = 1;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -199,6 +202,7 @@ namespace Examen.Forms
             this.button3.Size = new System.Drawing.Size(42, 34);
             this.button3.TabIndex = 2;
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -246,7 +250,7 @@ namespace Examen.Forms
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button button4;
     }
 }

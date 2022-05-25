@@ -33,15 +33,26 @@ namespace Examen.Forms
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnCours = new System.Windows.Forms.Button();
+            this.btnEtud = new System.Windows.Forms.Button();
+            this.btnSalle = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.maxBtn = new System.Windows.Forms.Button();
+            this.minBtn = new System.Windows.Forms.Button();
+            this.pnlNav = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.minBtn);
+            this.panel1.Controls.Add(this.maxBtn);
+            this.panel1.Controls.Add(this.button5);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -51,10 +62,11 @@ namespace Examen.Forms
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.panel2.Controls.Add(this.pnlNav);
             this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.btnSalle);
+            this.panel2.Controls.Add(this.btnEtud);
+            this.panel2.Controls.Add(this.btnCours);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 39);
@@ -73,50 +85,57 @@ namespace Examen.Forms
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.pictureBox1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(217, 104);
             this.panel4.TabIndex = 0;
             // 
-            // button1
+            // btnCours
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.Location = new System.Drawing.Point(0, 104);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(217, 75);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Cours";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCours.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCours.FlatAppearance.BorderSize = 0;
+            this.btnCours.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCours.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCours.Location = new System.Drawing.Point(0, 104);
+            this.btnCours.Name = "btnCours";
+            this.btnCours.Size = new System.Drawing.Size(217, 75);
+            this.btnCours.TabIndex = 1;
+            this.btnCours.Text = "Cours";
+            this.btnCours.UseVisualStyleBackColor = true;
+            this.btnCours.Click += new System.EventHandler(this.btnCours_Click);
+            this.btnCours.Leave += new System.EventHandler(this.btnCours_Leave);
             // 
-            // button2
+            // btnEtud
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button2.Location = new System.Drawing.Point(0, 179);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(217, 75);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Etudiants";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnEtud.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEtud.FlatAppearance.BorderSize = 0;
+            this.btnEtud.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEtud.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnEtud.Location = new System.Drawing.Point(0, 179);
+            this.btnEtud.Name = "btnEtud";
+            this.btnEtud.Size = new System.Drawing.Size(217, 75);
+            this.btnEtud.TabIndex = 2;
+            this.btnEtud.Text = "Etudiants";
+            this.btnEtud.UseVisualStyleBackColor = true;
+            this.btnEtud.Click += new System.EventHandler(this.btnEtud_Click);
+            this.btnEtud.Leave += new System.EventHandler(this.btnEtud_Leave);
             // 
-            // button3
+            // btnSalle
             // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button3.Location = new System.Drawing.Point(0, 254);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(217, 75);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Salles";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnSalle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSalle.FlatAppearance.BorderSize = 0;
+            this.btnSalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalle.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSalle.Location = new System.Drawing.Point(0, 254);
+            this.btnSalle.Name = "btnSalle";
+            this.btnSalle.Size = new System.Drawing.Size(217, 75);
+            this.btnSalle.TabIndex = 3;
+            this.btnSalle.Text = "Salles";
+            this.btnSalle.UseVisualStyleBackColor = true;
+            this.btnSalle.Click += new System.EventHandler(this.btnSalle_Click);
+            this.btnSalle.Leave += new System.EventHandler(this.btnSalle_Leave);
             // 
             // button4
             // 
@@ -131,6 +150,61 @@ namespace Examen.Forms
             this.button4.Text = "Déconnexion";
             this.button4.UseVisualStyleBackColor = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Examen.Properties.Resources.round_account_circle_black_24pt_3x;
+            this.pictureBox1.Location = new System.Drawing.Point(66, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(73, 77);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // button5
+            // 
+            this.button5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Image = global::Examen.Properties.Resources.round_close_black_24pt_1x;
+            this.button5.Location = new System.Drawing.Point(864, 0);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(47, 39);
+            this.button5.TabIndex = 0;
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // maxBtn
+            // 
+            this.maxBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.maxBtn.FlatAppearance.BorderSize = 0;
+            this.maxBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.maxBtn.Image = global::Examen.Properties.Resources.round_maximize_black_24pt_1x;
+            this.maxBtn.Location = new System.Drawing.Point(817, 0);
+            this.maxBtn.Name = "maxBtn";
+            this.maxBtn.Size = new System.Drawing.Size(47, 39);
+            this.maxBtn.TabIndex = 1;
+            this.maxBtn.UseVisualStyleBackColor = true;
+            this.maxBtn.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // minBtn
+            // 
+            this.minBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.minBtn.FlatAppearance.BorderSize = 0;
+            this.minBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.minBtn.Image = global::Examen.Properties.Resources.round_minimize_black_24pt_1x;
+            this.minBtn.Location = new System.Drawing.Point(770, 0);
+            this.minBtn.Name = "minBtn";
+            this.minBtn.Size = new System.Drawing.Size(47, 39);
+            this.minBtn.TabIndex = 2;
+            this.minBtn.UseVisualStyleBackColor = true;
+            this.minBtn.Click += new System.EventHandler(this.minBtn_Click);
+            // 
+            // pnlNav
+            // 
+            this.pnlNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.pnlNav.Location = new System.Drawing.Point(4, 165);
+            this.pnlNav.Name = "pnlNav";
+            this.pnlNav.Size = new System.Drawing.Size(4, 115);
+            this.pnlNav.TabIndex = 5;
+            // 
             // DashboardProf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -143,7 +217,10 @@ namespace Examen.Forms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DashboardProf";
             this.Text = "DashboardProf";
+            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -154,9 +231,14 @@ namespace Examen.Forms
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnCours;
+        private System.Windows.Forms.Button btnEtud;
+        private System.Windows.Forms.Button btnSalle;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button minBtn;
+        private System.Windows.Forms.Button maxBtn;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Panel pnlNav;
     }
 }

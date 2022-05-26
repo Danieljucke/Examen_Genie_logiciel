@@ -53,5 +53,29 @@ namespace Examen.Forms
             btnSalle.BackColor = Color.FromArgb(24, 30, 54);
         }
 
+        private void CloseBtn_MouseHover(object sender, EventArgs e)
+        {
+            CloseBtn.BackColor = Color.FromArgb(184, 15, 10);
+        }
+
+        private void CloseBtn_Leave(object sender, EventArgs e)
+        {
+            CloseBtn.BackColor = Color.FromArgb(41, 56, 73);
+        }
+
+        private void MaxBtn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void MinBtn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void CloseBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

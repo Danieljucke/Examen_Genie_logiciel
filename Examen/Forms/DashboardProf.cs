@@ -77,7 +77,17 @@ namespace Examen.Forms
 
         private void button5_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
 
+        private void button5_Leave(object sender, EventArgs e)
+        {
+            button5.BackColor = Color.FromArgb(41, 56, 73);
+        }
+
+        private void button5_MouseHover(object sender, EventArgs e)
+        {
+            button5.BackColor = Color.FromArgb(184, 15, 10);
         }
     }
 }

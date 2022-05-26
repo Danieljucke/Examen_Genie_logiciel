@@ -30,6 +30,9 @@ namespace Examen.Forms
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.MinBtn = new System.Windows.Forms.Button();
+            this.MaxBtn = new System.Windows.Forms.Button();
+            this.CloseBtn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.SaveBtn = new System.Windows.Forms.Button();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
@@ -40,16 +43,13 @@ namespace Examen.Forms
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.BackBtn = new System.Windows.Forms.Button();
-            this.CloseBtn = new System.Windows.Forms.Button();
-            this.MaxBtn = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.MinBtn);
             this.panel1.Controls.Add(this.MaxBtn);
             this.panel1.Controls.Add(this.CloseBtn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -57,6 +57,47 @@ namespace Examen.Forms
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(797, 34);
             this.panel1.TabIndex = 0;
+            // 
+            // MinBtn
+            // 
+            this.MinBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.MinBtn.FlatAppearance.BorderSize = 0;
+            this.MinBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MinBtn.Image = global::Examen.Properties.Resources.round_minimize_black_24pt_1x;
+            this.MinBtn.Location = new System.Drawing.Point(671, 0);
+            this.MinBtn.Name = "MinBtn";
+            this.MinBtn.Size = new System.Drawing.Size(42, 34);
+            this.MinBtn.TabIndex = 2;
+            this.MinBtn.UseVisualStyleBackColor = true;
+            this.MinBtn.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // MaxBtn
+            // 
+            this.MaxBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.MaxBtn.FlatAppearance.BorderSize = 0;
+            this.MaxBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MaxBtn.Image = global::Examen.Properties.Resources.round_maximize_black_24pt_1x;
+            this.MaxBtn.Location = new System.Drawing.Point(713, 0);
+            this.MaxBtn.Name = "MaxBtn";
+            this.MaxBtn.Size = new System.Drawing.Size(42, 34);
+            this.MaxBtn.TabIndex = 1;
+            this.MaxBtn.UseVisualStyleBackColor = true;
+            this.MaxBtn.Click += new System.EventHandler(this.MaxBtn_Click);
+            // 
+            // CloseBtn
+            // 
+            this.CloseBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.CloseBtn.FlatAppearance.BorderSize = 0;
+            this.CloseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CloseBtn.Image = global::Examen.Properties.Resources.round_close_black_24pt_1x;
+            this.CloseBtn.Location = new System.Drawing.Point(755, 0);
+            this.CloseBtn.Name = "CloseBtn";
+            this.CloseBtn.Size = new System.Drawing.Size(42, 34);
+            this.CloseBtn.TabIndex = 0;
+            this.CloseBtn.UseVisualStyleBackColor = true;
+            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
+            this.CloseBtn.MouseLeave += new System.EventHandler(this.CloseBtn_MouseLeave);
+            this.CloseBtn.MouseHover += new System.EventHandler(this.CloseBtn_MouseHover);
             // 
             // panel2
             // 
@@ -169,42 +210,6 @@ namespace Examen.Forms
             this.BackBtn.TabIndex = 2;
             this.BackBtn.UseVisualStyleBackColor = true;
             // 
-            // CloseBtn
-            // 
-            this.CloseBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.CloseBtn.FlatAppearance.BorderSize = 0;
-            this.CloseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CloseBtn.Image = global::Examen.Properties.Resources.round_close_black_24pt_1x;
-            this.CloseBtn.Location = new System.Drawing.Point(755, 0);
-            this.CloseBtn.Name = "CloseBtn";
-            this.CloseBtn.Size = new System.Drawing.Size(42, 34);
-            this.CloseBtn.TabIndex = 0;
-            this.CloseBtn.UseVisualStyleBackColor = true;
-            // 
-            // MaxBtn
-            // 
-            this.MaxBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.MaxBtn.FlatAppearance.BorderSize = 0;
-            this.MaxBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MaxBtn.Image = global::Examen.Properties.Resources.round_maximize_black_24pt_1x;
-            this.MaxBtn.Location = new System.Drawing.Point(713, 0);
-            this.MaxBtn.Name = "MaxBtn";
-            this.MaxBtn.Size = new System.Drawing.Size(42, 34);
-            this.MaxBtn.TabIndex = 1;
-            this.MaxBtn.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = global::Examen.Properties.Resources.round_minimize_black_24pt_1x;
-            this.button2.Location = new System.Drawing.Point(671, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(42, 34);
-            this.button2.TabIndex = 2;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // ForgottenPwd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -237,7 +242,7 @@ namespace Examen.Forms
         private System.Windows.Forms.Button SaveBtn;
         private System.Windows.Forms.Button BackBtn;
         private System.Windows.Forms.Button CloseBtn;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button MinBtn;
         private System.Windows.Forms.Button MaxBtn;
     }
 }

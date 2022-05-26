@@ -41,7 +41,7 @@ namespace Examen.Forms
             this.btnCours = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.MainPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -96,6 +96,7 @@ namespace Examen.Forms
             this.button5.Size = new System.Drawing.Size(47, 39);
             this.button5.TabIndex = 0;
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // panel2
             // 
@@ -197,14 +198,14 @@ namespace Examen.Forms
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // panel3
+            // MainPanel
             // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(217, 39);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(694, 604);
-            this.panel3.TabIndex = 2;
+            this.MainPanel.BackColor = System.Drawing.Color.White;
+            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainPanel.Location = new System.Drawing.Point(217, 39);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(694, 604);
+            this.MainPanel.TabIndex = 2;
             // 
             // DashboardProf
             // 
@@ -212,7 +213,7 @@ namespace Examen.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(911, 643);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -230,7 +231,7 @@ namespace Examen.Forms
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel MainPanel;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btnCours;
         private System.Windows.Forms.Button btnEtud;

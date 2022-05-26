@@ -95,6 +95,23 @@ namespace Examen.Classes
             da.DataSource = MonDataSet.Tables["DT" + table];
             deconnexionBDD();
         }
+        // cette fonction va creer le mot de passe par defaut de l'adminstrateur dès la première ouverture de l'appliction et va lui retourner le password et le username pour qu'il se connecte 
+        public void CreerAdmiAcess ()
+        {
+            connexionBaseDD();
+            req = "insert into Connexion values('Admin','Admin1234','@admin.com')";
+            commandeBDD(req);
+            try
+            {
+                int compte = _cmd.ExecuteNonQuery();
+                if (compte > 0)
+                    MessageBox.Show("bonjour Mr/Me l'administrateur votre Mot de passe par defaut est Admin1234 et le nom d'utilisateur est Admin");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(""+ex);
+            }
+        }
 //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: parti mot de passe ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
         // cette methode c'est pour convertir le mot de passe que l'utilisateur va saisir lors de son inregistremment

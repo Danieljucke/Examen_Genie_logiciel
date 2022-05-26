@@ -53,14 +53,5 @@ namespace Examen.Forms
             btnSalle.BackColor = Color.FromArgb(24, 30, 54);
         }
 
-        private void btnLogOut_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void closeBtn_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
     }
 }

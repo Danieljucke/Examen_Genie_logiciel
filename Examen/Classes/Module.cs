@@ -11,14 +11,13 @@ namespace Examen.Classes
         protected string requette;
         protected int compte;
         Toolkit t = new Toolkit();
-        public void AjouterModule(string nom,int moyen,int duree, string classe)
+        public void AjouterModule(string nom,int moyen,int duree, int id_classe)
         {
-            t.connexionBaseDD();
-            requette = "insert into Module values ('" + nom + "','" + moyen + "','" + duree + "', '"+classe+"')";
-            t.commandeBDD(requette);
+            int id = t.nextcode("Module","id_salle");
+            requette = "insert into Module values ('"+ id +"''" + nom + "','" + moyen + "','" + duree + "', '"+ id_classe +"')";
             try
             {
-                compte = t.get_cmd().ExecuteNonQuery();
+                compte =t.commandeBDD(requette).ExecuteNonQuery();
                 if (compte < 0)
                     MessageBox.Show("Il existe déjà un Module ayant " + nom + " comme nom");
                 else
@@ -30,14 +29,12 @@ namespace Examen.Classes
             }
             t.deconnexionBDD();
         }
-        public void ModifierModule(string nom, string moyen, string dure, string classe)
+        public void ModifierModule(int id ,string nom, string moyen, string dure, int id_classe)
         {
-            t.connexionBaseDD();
-            requette = "update Module set Moyenne_general='"+moyen+"', chargec_horaire='"+dure+"', nom_classe='"+classe+"'  where nomModule= '" + nom + "'";
-            t.commandeBDD(requette);
+            requette = "update Module set Nom_Module= '" + nom + "' Moyenne_generale='" + moyen+"', charge_horaire='"+dure+"', id_classe='"+ id_classe +"'  where id_module '"+id+"' ";
             try
             {
-                compte = t.get_cmd().ExecuteNonQuery();
+                compte =t.commandeBDD(requette).ExecuteNonQuery();
                 if (compte < 0)
                 {
                     DialogResult re = MessageBox.Show("Modification échoué voulez-vous reprendre", "Confirmation", MessageBoxButtons.YesNoCancel);
@@ -53,17 +50,15 @@ namespace Examen.Classes
             }
             t.deconnexionBDD();
         }
-        public void SupprimerModule(string nom)
+        public void SupprimerModule(int id)
         {
-            t.connexionBaseDD();
-            requette = "delete from Module where Nom_module='" + nom + "'";
-            t.commandeBDD(requette);
+            requette = "delete from Module where id_module='" + id + "'";
             DialogResult re = MessageBox.Show("Vouslez vous vraiment supprimer ce parcous", "Confirmation", MessageBoxButtons.YesNoCancel);
             if (re == DialogResult.Yes)
             {
                 try
                 {
-                    compte = t.get_cmd().ExecuteNonQuery();
+                    compte =t.commandeBDD(requette).ExecuteNonQuery();
                     if (compte > 0)
                         MessageBox.Show("Suppression Effectuée");
                     else

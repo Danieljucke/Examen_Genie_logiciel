@@ -47,11 +47,9 @@ namespace Examen.Classes
         public void AjouterProf(string cin, string nom, string postnom, string prenom, char sex, string birthday, string adresse, string telephone, string email,string titre )
         {
             requette = "insert into Professeur values ()";
-            t.connexionBaseDD();
-            t.commandeBDD(requette);
             try
             {
-                compte = t.get_cmd().ExecuteNonQuery();
+                compte = t.commandeBDD(requette).ExecuteNonQuery();
                 if (compte < 0)
                     MessageBox.Show("l'enregistrement n'a pas abouti car il existe un professeur ayant " + cin + " comme CIN");
                 else
@@ -65,11 +63,9 @@ namespace Examen.Classes
         public void ModifierProf(string cin, string nom, string postnom, string prenom, char sex, string birthday, string adresse, string telephone, string email, string titre)
         {
             requette = "Update Professeur set Nom='"+nom+"', Postnom='"+postnom+"', Prenom= '"+prenom+"', Sexe='"+sex+"', DateNaissance='"+birthday+"', Adresse='"+adresse+"', telephone ='"+telephone+"', email='"+email+"', titre='"+titre+"' where CIN='"+cin+"'";
-            t.connexionBaseDD();
-            t.commandeBDD(requette);
             try
             {
-                compte = t.get_cmd().ExecuteNonQuery();
+                compte = t.commandeBDD(requette).ExecuteNonQuery();
                 if (compte < 0)
                     MessageBox.Show("Il existe pas de Professeur ayant  " + cin + " comme CIN");
                 else
@@ -83,14 +79,12 @@ namespace Examen.Classes
         public void SupprimerProf(string cin)
         {
             requette = "delete from Professeur where CIN='"+cin+"'";
-            t.connexionBaseDD();
-            t.commandeBDD(requette);
             DialogResult r= MessageBox.Show("voulez vous supprimer cet professeur","CONFIRMATION",MessageBoxButtons.YesNo);
             if (r==DialogResult.Yes)
             {
                 try
                 {
-                    compte = t.get_cmd().ExecuteNonQuery();
+                    compte = t.commandeBDD(requette).ExecuteNonQuery();
                     if (compte < 0)
                         MessageBox.Show("Il n'y pas de professeur ayant " + cin + " comme CIN ");
                     else

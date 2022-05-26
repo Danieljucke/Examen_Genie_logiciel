@@ -13,9 +13,8 @@ namespace Examen.Classes
         {
             int nbfacture=t.nextcode("PayementFrais", "numero_facture"); 
             requete = "insert into PayementFrais values ('"+nbfacture+"','"+type+"','"+montatapayer+"', '"+cne+"')";
-            t.connexionBaseDD();
-            t.commandeBDD(requete);
-            int compte = t.get_cmd().ExecuteNonQuery();
+            
+            int compte = t.commandeBDD(requete).ExecuteNonQuery();
             if (compte < 0)
                 MessageBox.Show("Payement Non Effectué");
             else
@@ -25,11 +24,9 @@ namespace Examen.Classes
         {
             int solde = 0;
             requete = "select frais from etudiant where CNE='"+cne+"'";
-            t.connexionBaseDD();
-            t.commandeBDD(requete);
             try
             {
-                SqlDataReader r = t.get_cmd().ExecuteReader();
+                SqlDataReader r = t.commandeBDD(requete).ExecuteReader();
                 while (r.Read())
                     solde = int.Parse(r.GetValue(0).ToString());
                 if (solde == 0)

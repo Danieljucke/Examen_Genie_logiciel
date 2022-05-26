@@ -21,3 +21,8 @@ C:\Users\jucke\Documents\Examen\obj\Debug\netcoreapp3.1\Examen.csproj.CopyComple
 C:\Users\jucke\Documents\Examen\obj\Debug\netcoreapp3.1\Examen.dll
 C:\Users\jucke\Documents\Examen\obj\Debug\netcoreapp3.1\Examen.pdb
 C:\Users\jucke\Documents\Examen\obj\Debug\netcoreapp3.1\Examen.genruntimeconfig.cache
+C:\Users\jucke\Documents\Examen\obj\Debug\netcoreapp3.1\Examen.Forms.CoursPanel.resources
+C:\Users\jucke\Documents\Examen\obj\Debug\netcoreapp3.1\Examen.Forms.DashboardEtudiant.resources
+C:\Users\jucke\Documents\Examen\obj\Debug\netcoreapp3.1\Examen.Forms.DashboardProf.resources
+C:\Users\jucke\Documents\Examen\obj\Debug\netcoreapp3.1\Examen.Forms.ProfPanel.resources
+C:\Users\jucke\Documents\Examen\bin\Debug\netcoreapp3.1\CircularProgressBar.dll

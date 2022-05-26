@@ -15,7 +15,7 @@ namespace Examen.Classes
         private string password;
         private string database;
         private string chaine;
-        public string Nom_server  { get => nom_server ; private set => nom_server = value; }
+        public string Nom_server { get => nom_server; private set => nom_server = value; }
         public string User_id { get => user_id; private set => user_id = value; }
         public string Password { get => password; private set => password = value; }
         public string Database { get => database; private set => database = value; }
@@ -25,49 +25,55 @@ namespace Examen.Classes
         protected SqlCommand _cmd;
         public DataSet MonDataSet;
         public SqlDataAdapter _da;
-//::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: parti base de données :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: parti base de données :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         public void prendreDataNewServeur(string nomServer, string UserId, string _password, string _database)
         {
             this.Nom_server = nomServer;
             this.User_id = UserId;
             this.Password = _password;
-            this.Database=_database;
-            this.Chaine= "server='"+this.Nom_server+"', User Id='"+this.User_id+"', pwd='"+this.Password+"'; database='"+this.Database+"'";
-        }
-        
-        public SqlCommand get_cmd()
-        {
-            return _cmd;
-        }
-        // a la place de créer des connexion dans toutes les classe il suffira de faire appel a cette methode pour créer une connexion avec la base de données 
-        public void connexionBaseDD()
-        {
-            if (connexion.State==ConnectionState.Closed)
-            {
-                connexion = new SqlConnection(chaine);
-                connexion.Open();
-            }
-            
-        }
-        // ferme la connexion a la base de données
-        public void deconnexionBDD()
-        {
-            if (connexion.State == ConnectionState.Open)
-                connexion.Close();
-        }
-        public void commandeBDD(string requete)
-        {
-            _cmd = new SqlCommand(requete, connexion);
+            this.Database = _database;
+            this.Chaine = "server='" + this.Nom_server + "', User Id='" + this.User_id + "', pwd='" + this.Password + "'; database='" + this.Database + "'";
         }
 
-        public void AfficherDataGrid (string table, DataGridView da)
+        private void attribuer_chaine()
+        {
+            connexion = new SqlConnection(chaine);
+        }
+        // a la place de créer des connexion dans toutes les classe il suffira de faire appel a cette methode pour créer une connexion avec la base de données 
+       
+        public SqlConnection connexionBaseDD()
+        {
+            attribuer_chaine();
+            if (connexion.State == ConnectionState.Closed)
+                connexion.Open();
+            return connexion;
+        }
+        // ferme la connexion a la base de données
+        public SqlConnection deconnexionBDD()
+        {
+            attribuer_chaine();
+            if (connexion.State == ConnectionState.Open)
+                connexion.Close();
+            return connexion;
+        }
+        public SqlCommand commandeBDD(string requette)
+        {
+            _cmd = new SqlCommand(this.req, connexionBaseDD());
+            return _cmd;
+        }
+
+
+        public void AfficherDataGrid(string table, DataGridView da)
         {
             req = "select * from " + table;
+            SqlConnection con;
+            SqlDataAdapter adapt;
+            DataTable dt;
             connexionBaseDD();
-            commandeBDD(req);
-            _da.SelectCommand = _cmd;
-            _da.Fill(MonDataSet, "DT" + table);
-            da.DataSource = MonDataSet.Tables["DT"+table];
+            adapt = new SqlDataAdapter(req, connexionBaseDD());
+            dt = new DataTable();
+            adapt.Fill(dt);
+            da.DataSource = dt;
             deconnexionBDD();
         }
 
@@ -75,7 +81,7 @@ namespace Examen.Classes
         {
             req = "select count (*) from "+table+"where"+champ+"="+valeur;
             connexionBaseDD();
-            int compte = int.Parse(_cmd.ExecuteScalar().ToString());
+            int compte = int.Parse(commandeBDD(req).ExecuteScalar().ToString());
             return compte;
         }
         /* cette methode aura comme parametre le mot que l'utilisateur va taper 
@@ -85,25 +91,25 @@ namespace Examen.Classes
         cette methode doit etre placé dans une le textebox(bare de recherhce) avec comme evenement textchanged c'est lui qui va faire en sorte qu'a chaque fois que l'utilisateur 
         saisir un mot il va permettre de faire une recherche
         */
-        public void search (string Motrechercher,string table, string champtable ,DataGridView da)
+        public void search(string Motrechercher, string table, string champtable, DataGridView da)
         {
-            req = "select * from '"+table+"' where '"+champtable+"'='"+Motrechercher+"'";
+            req = "select * from " + table + " where  " + champtable + " like '%" + Motrechercher + "%'";
+            SqlDataAdapter adapt;
+            DataTable dt;
             connexionBaseDD();
-            commandeBDD(req);
-            _da.SelectCommand = _cmd;
-            _da.Fill(MonDataSet, "DT" + table);
-            da.DataSource = MonDataSet.Tables["DT" + table];
+            adapt = new SqlDataAdapter(req, connexionBaseDD());
+            dt = new DataTable();
+            adapt.Fill(dt);
+            da.DataSource = dt;
             deconnexionBDD();
         }
         // cette fonction va creer le mot de passe par defaut de l'adminstrateur dès la première ouverture de l'appliction et va lui retourner le password et le username pour qu'il se connecte 
         public void CreerAdmiAcess ()
         {
-            connexionBaseDD();
             req = "insert into Connexion values('Admin','Admin1234','@admin.com')";
-            commandeBDD(req);
             try
             {
-                int compte = _cmd.ExecuteNonQuery();
+                int compte = commandeBDD(req).ExecuteNonQuery();
                 if (compte > 0)
                     MessageBox.Show("bonjour Mr/Me l'administrateur votre Mot de passe par defaut est Admin1234 et le nom d'utilisateur est Admin");
             }
@@ -143,6 +149,24 @@ namespace Examen.Classes
             string resultat = new string(decoder);
             return resultat;
         }
+        // va chercher s'il y a deja un username avec ce nom 
+        public string checkuser (string username)
+        {
+            req = "select Username from Connexion where Username='" + username + "'";
+            string recuperer="";
+            try
+            {
+                SqlDataReader r = commandeBDD(req).ExecuteReader();
+                while (r.Read())
+                {
+                    recuperer = r.GetString(0);
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return recuperer;
+        }
 
 //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: partie outils :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         
@@ -150,14 +174,12 @@ namespace Examen.Classes
         //elle se prensentera comme suit ex: cne = nextcode(etduiant,cne);
         public int nextcode(string table, string key)
         {
-            string requete= "select SELECT MAX('"+key+"') + 1 FROM '"+table+"'";
+            string requete= "SELECT MAX('"+key+"') + 1 FROM '"+table+"'";
             int lastcode=0;
             int next_code=0;
-            connexionBaseDD();
-            commandeBDD(requete);
             try
             {
-                SqlDataReader r = _cmd.ExecuteReader();
+                SqlDataReader r = commandeBDD(requete).ExecuteReader();
                 while (r.Read())
                     lastcode = int.Parse(r.GetValue(0).ToString());
             if (lastcode == 0)
@@ -167,7 +189,7 @@ namespace Examen.Classes
             }
             catch(Exception ex)
             {
-                MessageBox.Show("" + ex);
+                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return next_code;
         }

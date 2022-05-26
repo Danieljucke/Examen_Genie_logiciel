@@ -11,14 +11,13 @@ namespace Examen.Classes
         protected string requette;
         protected int compte;
         Toolkit t = new Toolkit();
-        public void Ajoutercours(string cours )
+        public void Ajoutercours(string cours, int id_salle, int cin, int id_module)
         {
-            t.connexionBaseDD();
-            requette = "insert into cours values ('" + cours + "')";
-            t.commandeBDD(requette);
+            int id = t.nextcode("cour","id_cours");
+            requette = "insert into cours values ('" + id + "','" + cours + "','" + id_salle + "','" + cin + "','" + id_module + "')";
             try
             {
-                compte = t.get_cmd().ExecuteNonQuery();
+                compte = t.commandeBDD(requette).ExecuteNonQuery();
                 if (compte < 0)
                     MessageBox.Show("Il existe déjà un cours ayant " + cours + " comme nom");
                 else
@@ -31,14 +30,13 @@ namespace Examen.Classes
             t.deconnexionBDD();
         }
     
-        public void Modifiercours(string cours, int id_salle, int cin, string module)
+        public void Modifiercours(int id ,string cours, int id_salle, int cin, int id_module)
         {
-            t.connexionBaseDD();
-            requette = "update cours set id_salle ='" + id_salle + "', CIN='"+cin+"', Nom_Module='"+module+"' where nomcours= '" + cours + "'";
-            t.commandeBDD(requette);
+            requette = "update cours set  Nom_cours= '" + cours + "' id_salle ='" + id_salle + "', CIN='" + cin + "', Nom_Module='" + id_module + "' where id_cours='" + id + "' ";
+
             try
             {
-                compte = t.get_cmd().ExecuteNonQuery();
+                compte = t.commandeBDD(requette).ExecuteNonQuery();
                 if (compte < 0)
                 {
                     DialogResult re = MessageBox.Show("Modification échoué voulez-vous reprendre", "Confirmation", MessageBoxButtons.YesNoCancel);
@@ -54,17 +52,15 @@ namespace Examen.Classes
             }
             t.deconnexionBDD();
         }
-        public void Supprimercours(string cours)
+        public void Supprimercours(int id)
         {
-            t.connexionBaseDD();
-            requette = "delete from cours where id='" +cours+ "'";
-            t.commandeBDD(requette);
+            requette = "delete from cours where id_cours='" + id + "'";
             DialogResult re = MessageBox.Show("Voulez-vous vraiment supprimer ce parcous", "Confirmation", MessageBoxButtons.YesNoCancel);
             if (re == DialogResult.Yes)
             {
                 try
                 {
-                    compte = t.get_cmd().ExecuteNonQuery();
+                    compte = t.commandeBDD(requette).ExecuteNonQuery();
                     if (compte > 0)
                         MessageBox.Show("Suppression Effectuée");
                     else

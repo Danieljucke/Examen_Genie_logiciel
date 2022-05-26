@@ -11,14 +11,13 @@ namespace Examen.Classes
         protected string requette;
         protected int compte; 
         Toolkit t = new Toolkit();
-        public void AjouterParcours(int id, string nom)
+        public void AjouterParcours(string nom)
         {
-            t.connexionBaseDD();
+            int id = t.nextcode("Parcours", "id_parcours");
             requette = "insert into Parcours values ('"+id+"','"+nom+"')";
-            t.commandeBDD(requette);
             try
             {
-                compte = t.get_cmd().ExecuteNonQuery();
+                compte = t.commandeBDD(requette).ExecuteNonQuery();
                 if (compte < 0)
                     MessageBox.Show("Il existe déjà un parcours ayant "+id+" comme identifiant");
                 else
@@ -30,15 +29,12 @@ namespace Examen.Classes
             }
             t.deconnexionBDD();
         }
-// etant donner que nous avons qu'un seul champs dans parcours la methode modifier n'a plus lieu d'etre
-        /*public void ModifierParcours (string valeur, string nom)
+        public void ModifierParcours (int id, string nom)
         {
-            t.connexionBaseDD();
-            requette = "update Parcours set nomParcours ='"+valeur+"' where nomParcours= '"+nom+"'";
-            t.commandeBDD(requette);
+            requette = "update Parcours set nom_parcours ='"+nom+"' where id_parcours= '"+id+"'";
             try
             {
-                compte = t.get_cmd().ExecuteNonQuery();
+                compte = t.commandeBDD(requette).ExecuteNonQuery();
                 if (compte < 0)
                 {
                    DialogResult re= MessageBox.Show("Modification échoué voulez-vous reprendre", "Confirmation", MessageBoxButtons.YesNoCancel);
@@ -53,18 +49,16 @@ namespace Examen.Classes
                 MessageBox.Show("" + ex);
             }
             t.deconnexionBDD();
-        }*/
+        }
         public void SupprimerParcours(int id)
         {
-            t.connexionBaseDD();
-            requette = "delete from Parcours where id='"+id+"'";
-            t.commandeBDD(requette);
+            requette = "delete from Parcours where id_parcours='"+id+"'";
             DialogResult re = MessageBox.Show("Vouslez vous vraiment supprimer ce parcous", "Confirmation", MessageBoxButtons.YesNoCancel);
             if (re == DialogResult.Yes)
             {
                 try
                 {
-                    compte = t.get_cmd().ExecuteNonQuery();
+                    compte = t.commandeBDD(requette).ExecuteNonQuery();
                     if (compte > 0)
                         MessageBox.Show("Suppression Effectuée");
                     else

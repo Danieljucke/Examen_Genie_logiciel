@@ -56,14 +56,10 @@ namespace Examen.Classes
             Phone = phone;
             Birthdate = birthdate;
             Level = level;
-
-
-            t.connexionBaseDD();
             requette = "insert into etudiant values ('" + cne + "','" + nom + "','" + postnom + "','" + prenom + "','" + sex + "','" + adress + "','" + faculte + "','" + option + "','" + phone + "','" + birthdate + "','" + level + "')";
-            t.commandeBDD(requette);
             try
             {
-                compte = t.get_cmd().ExecuteNonQuery();
+                compte = t.commandeBDD(requette).ExecuteNonQuery();
                 if (compte < 0)
                     MessageBox.Show("Il existe déjà un étudiant ayant " + cne + " comme identifiant");
                 else
@@ -77,12 +73,10 @@ namespace Examen.Classes
         }
         public void ModifierEtudiant(string valeur, string nom)
         {
-            t.connexionBaseDD();
             requette = "update etudiant set nom ='" + valeur + "' where nom= '" + nom + "'";
-            t.commandeBDD(requette);
             try
             {
-                compte = t.get_cmd().ExecuteNonQuery();
+                compte = t.commandeBDD(requette).ExecuteNonQuery();
                 if (compte < 0)
                 {
                     DialogResult re = MessageBox.Show("Modification échoué voulez-vous reprendre?", "Confirmation", MessageBoxButtons.YesNoCancel);
@@ -101,15 +95,13 @@ namespace Examen.Classes
 
         public void SupprimerEtudiant(int cne)
         {
-            t.connexionBaseDD();
             requette = "delete from etudiant where id='" + cne + "'";
-            t.commandeBDD(requette);
             DialogResult re = MessageBox.Show("Voulez-vous vraiment supprimer ce parcous", "Confirmation", MessageBoxButtons.YesNoCancel);
             if (re == DialogResult.Yes)
             {
                 try
                 {
-                    compte = t.get_cmd().ExecuteNonQuery();
+                    compte = t.commandeBDD(requette).ExecuteNonQuery();
                     if (compte > 0)
                         MessageBox.Show("Suppression Effectuée");
                     else

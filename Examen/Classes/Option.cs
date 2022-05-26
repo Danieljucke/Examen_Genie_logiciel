@@ -13,12 +13,12 @@ namespace Examen.Classes
         Toolkit t = new Toolkit();
         public void AjouterOption(string nom_option)
         {
-            t.connexionBaseDD();
+
             requette = "insert into Options values ('" + nom_option + "')";
-            t.commandeBDD(requette);
+
             try
             {
-                compte = t.get_cmd().ExecuteNonQuery();
+                compte = t.commandeBDD(requette).ExecuteNonQuery();
                 if (compte < 0)
                     MessageBox.Show("Il existe déjà un Option ayant " + nom_option + " comme nom");
                 else
@@ -30,15 +30,13 @@ namespace Examen.Classes
             }
             t.deconnexionBDD();
         }
-        // etant donner que nous avons qu'un seul champs dans options la methode modifier n'a plus lieu d'etre
-        /*public void ModifierOption(string valeur, string nom)
+        public void ModifierOption(int id, string nom)
         {
-            t.connexionBaseDD();
-            requette = "update Options set nom_option ='" + valeur + "' where nomOption= '" + nom + "'";
-            t.commandeBDD(requette);
+
+            requette = "update Options set Nom_option ='" + nom + "' where id_option= '" + id + "'";
             try
             {
-                compte = t.get_cmd().ExecuteNonQuery();
+                compte = t.commandeBDD(requette).ExecuteNonQuery();
                 if (compte < 0)
                 {
                     DialogResult re = MessageBox.Show("Modification échoué! voulez-vous reprendre?", "Question", MessageBoxButtons.YesNoCancel);
@@ -53,18 +51,16 @@ namespace Examen.Classes
                 MessageBox.Show("" + ex);
             }
             t.deconnexionBDD();
-        }*/
-        public void SupprimerOption(string nom_option)
+        }
+        public void SupprimerOption(int id )
         {
-            t.connexionBaseDD();
-            requette = "delete from Options where Nom_option='" + nom_option + "'";
-            t.commandeBDD(requette);
+            requette = "delete from Options where id_option='" + id + "'";
             DialogResult re = MessageBox.Show("Vouslez vous vraiment supprimer cette Option", "Question", MessageBoxButtons.YesNoCancel);
             if (re == DialogResult.Yes)
             {
                 try
                 {
-                    compte = t.get_cmd().ExecuteNonQuery();
+                    compte = t.commandeBDD(requette).ExecuteNonQuery();
                     if (compte > 0)
                         MessageBox.Show("Suppression Effectuée");
                     else

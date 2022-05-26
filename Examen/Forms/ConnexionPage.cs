@@ -44,25 +44,5 @@ namespace Examen.Forms
         {
             this.WindowState = FormWindowState.Maximized;
         }
-
-        private void richTextBox2_TextChanged(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnClose_MouseHover(object sender, EventArgs e)
-        {
-            btnClose.BackColor = Color.FromArgb(184, 15, 10);
-        }
-
-        private void btnClose_Leave(object sender, EventArgs e)
-        {
-            btnClose.BackColor = Color.FromArgb(41, 56, 73);
-        }
     }
 }

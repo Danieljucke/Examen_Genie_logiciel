@@ -19,11 +19,9 @@ namespace Examen.Classes
         {
             string recup="";
             req = "select mot_de_passe from table connexion where Nom_utilisateur='" + utilisateur + "'";
-            u.connexionBaseDD();
-            u.commandeBDD(req);
             try
             {
-                SqlDataReader retourner = u.get_cmd().ExecuteReader();
+                SqlDataReader retourner = u.commandeBDD(req).ExecuteReader();
                 while (retourner.Read())
                 {
                     recup = retourner.GetString(0);
@@ -41,45 +39,49 @@ namespace Examen.Classes
         // la méthode convertir mot de passe se trouve dans la classe toolkit
         public void inscription(string username, string motDePasse, string email, string Confirmpassword)
         {
-            if (!motDePasse.Equals(Confirmpassword))//compare si le mot de passe correspont au champs confirmer mot de passe
-                MessageBox.Show("le Mot de passe n'est pas le même");
+            int id = u.nextcode("Connexion","id_compte");
+            if (username.Equals(u.checkuser(username)))
+                MessageBox.Show("ce nom d'utilisateur est déjà pris! veuillez choisir un autre");
             else
             {
-                req = "insert into connexion values ('" + username + "','" + motDePasse + "','" + email + "')";
-                u.connexionBaseDD();
-                u.commandeBDD(req);
-                try
+                if (!motDePasse.Equals(Confirmpassword))//compare si le mot de passe correspont au champs confirmer mot de passe
+                    MessageBox.Show("le Mot de passe n'est pas le même");
+                else
                 {
-                    int chekRespondBDD = u.get_cmd().ExecuteNonQuery();
-                    if (chekRespondBDD == 1)
-                        MessageBox.Show("Inscription Reussi");
-                    else
-                        MessageBox.Show("Il existe déjà un utilsateur à ce nom ");
+                    req = "insert into connexion values ('" + id + "','" + username + "','" + motDePasse + "','" + email + "')";
+
+                    try
+                    {
+                        int chekRespondBDD = u.commandeBDD(req).ExecuteNonQuery();
+                        if (chekRespondBDD == 1)
+                            MessageBox.Show("Inscription Reussi");
+                        else
+                            MessageBox.Show("Il existe déjà un utilsateur à ce nom ");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("" + ex);
+                    }
+                    u.deconnexionBDD();
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("" + ex);
-                }
-                u.deconnexionBDD();
             }
         }
         // motde passe oublié va se charger de changer le mot de passe et de checker si le username est bien present dans la base de données avant d'effectuer le changement
         public void motDePasseOublie(string Utilisateur,string motDePasse)
         {
+            
             string prendreUtilisateur="";
-            req = "";
-            u.connexionBaseDD();
-            u.commandeBDD(req);
+            req = "select Username from Connexion where Username ='"+Utilisateur+"'"; 
             try
             {
-                SqlDataReader voirUsername = u.get_cmd().ExecuteReader();
+                SqlDataReader voirUsername = u.commandeBDD(req).ExecuteReader();
                 while (voirUsername.Read())
                     prendreUtilisateur = voirUsername.GetString(0);
                 if (prendreUtilisateur == Utilisateur)
                 {
                     req = "update connexion set Mot_de_passe ='"+motDePasse+"' where Nom_utilisateur='"+Utilisateur+"'";
                     u.commandeBDD(req);
-                    int checkoperation = u.nombreLignes(Utilisateur, "connexion",motDePasse);
+                    int checkoperation = u.commandeBDD(req).ExecuteNonQuery();
                     if (checkoperation < 0)
                         MessageBox.Show("le mot de passe a été chnagé avec succès");
                     else

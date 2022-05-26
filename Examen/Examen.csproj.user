@@ -4,7 +4,25 @@
     <Compile Update="Forms\ConnexionPage.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\CoursPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\DashboardEtudiant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\DashboardProf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\EtudiantPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\ForgottenPwd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\ProfPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\SallePanel.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

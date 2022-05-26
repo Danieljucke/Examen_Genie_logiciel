@@ -73,6 +73,36 @@ namespace Examen.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap baseline_logout_black_24pt_1x1 {
+            get {
+                object obj = ResourceManager.GetObject("baseline_logout_black_24pt_1x1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap baseline_logout_black_24pt_2x {
+            get {
+                object obj = ResourceManager.GetObject("baseline_logout_black_24pt_2x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap baseline_logout_black_24pt_3x {
+            get {
+                object obj = ResourceManager.GetObject("baseline_logout_black_24pt_3x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap round_account_circle_black_24pt_3x {
             get {
                 object obj = ResourceManager.GetObject("round_account_circle_black_24pt_3x", resourceCulture);

@@ -485,11 +485,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Source\\Repos\\Examen_Genie_logiciel\\Examen\\Examen.csproj",
+      "projectUniqueName": "C:\\Users\\User\\source\\repos\\Examen_Genie_logiciel\\Examen\\Examen.csproj",
       "projectName": "Examen",
-      "projectPath": "C:\\Users\\User\\Source\\Repos\\Examen_Genie_logiciel\\Examen\\Examen.csproj",
+      "projectPath": "C:\\Users\\User\\source\\repos\\Examen_Genie_logiciel\\Examen\\Examen.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Source\\Repos\\Examen_Genie_logiciel\\Examen\\obj\\",
+      "outputPath": "C:\\Users\\User\\source\\repos\\Examen_Genie_logiciel\\Examen\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

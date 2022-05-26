@@ -108,10 +108,10 @@ namespace Examen.Forms
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(109, 195);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 21);
+            this.label3.Size = new System.Drawing.Size(101, 19);
             this.label3.TabIndex = 5;
             this.label3.Text = "MOT DE PASSE";
             this.label3.Visible = false;
@@ -119,10 +119,10 @@ namespace Examen.Forms
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(109, 95);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(157, 21);
+            this.label2.Size = new System.Drawing.Size(139, 19);
             this.label2.TabIndex = 4;
             this.label2.Text = "NOM D\'UTILISATEUR";
             // 

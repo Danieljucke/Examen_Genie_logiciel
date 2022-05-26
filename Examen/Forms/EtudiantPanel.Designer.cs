@@ -29,12 +29,64 @@ namespace Examen.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(694, 100);
+            this.panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Examen.Properties.Resources.round_people_black_24pt_3x;
+            this.pictureBox1.Location = new System.Drawing.Point(36, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(90, 72);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(132, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 30);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Etudiants";
+            // 
+            // EtudiantPanel
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.Gainsboro;
+            this.ClientSize = new System.Drawing.Size(694, 604);
+            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "EtudiantPanel";
             this.Text = "EtudiantPanel";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -30,6 +30,9 @@ namespace Examen.Forms
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.MinBtn = new System.Windows.Forms.Button();
+            this.MaxBtn = new System.Windows.Forms.Button();
+            this.CloseBtn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlNav = new System.Windows.Forms.Panel();
             this.btnLogOut = new System.Windows.Forms.Button();
@@ -39,9 +42,6 @@ namespace Examen.Forms
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ContainerPanel = new System.Windows.Forms.Panel();
-            this.CloseBtn = new System.Windows.Forms.Button();
-            this.MaxBtn = new System.Windows.Forms.Button();
-            this.MinBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -59,6 +59,47 @@ namespace Examen.Forms
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(911, 34);
             this.panel1.TabIndex = 0;
+            // 
+            // MinBtn
+            // 
+            this.MinBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.MinBtn.FlatAppearance.BorderSize = 0;
+            this.MinBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MinBtn.Image = global::Examen.Properties.Resources.round_minimize_black_24pt_1x;
+            this.MinBtn.Location = new System.Drawing.Point(785, 0);
+            this.MinBtn.Name = "MinBtn";
+            this.MinBtn.Size = new System.Drawing.Size(42, 34);
+            this.MinBtn.TabIndex = 2;
+            this.MinBtn.UseVisualStyleBackColor = true;
+            this.MinBtn.Click += new System.EventHandler(this.MinBtn_Click);
+            // 
+            // MaxBtn
+            // 
+            this.MaxBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.MaxBtn.FlatAppearance.BorderSize = 0;
+            this.MaxBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MaxBtn.Image = global::Examen.Properties.Resources.round_maximize_black_24pt_1x;
+            this.MaxBtn.Location = new System.Drawing.Point(827, 0);
+            this.MaxBtn.Name = "MaxBtn";
+            this.MaxBtn.Size = new System.Drawing.Size(42, 34);
+            this.MaxBtn.TabIndex = 1;
+            this.MaxBtn.UseVisualStyleBackColor = true;
+            this.MaxBtn.Click += new System.EventHandler(this.MaxBtn_Click);
+            // 
+            // CloseBtn
+            // 
+            this.CloseBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.CloseBtn.FlatAppearance.BorderSize = 0;
+            this.CloseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CloseBtn.Image = global::Examen.Properties.Resources.round_close_black_24pt_1x;
+            this.CloseBtn.Location = new System.Drawing.Point(869, 0);
+            this.CloseBtn.Name = "CloseBtn";
+            this.CloseBtn.Size = new System.Drawing.Size(42, 34);
+            this.CloseBtn.TabIndex = 0;
+            this.CloseBtn.UseVisualStyleBackColor = true;
+            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
+            this.CloseBtn.Leave += new System.EventHandler(this.CloseBtn_Leave);
+            this.CloseBtn.MouseHover += new System.EventHandler(this.CloseBtn_MouseHover);
             // 
             // panel2
             // 
@@ -179,47 +220,6 @@ namespace Examen.Forms
             this.ContainerPanel.Name = "ContainerPanel";
             this.ContainerPanel.Size = new System.Drawing.Size(694, 609);
             this.ContainerPanel.TabIndex = 2;
-            // 
-            // CloseBtn
-            // 
-            this.CloseBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.CloseBtn.FlatAppearance.BorderSize = 0;
-            this.CloseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CloseBtn.Image = global::Examen.Properties.Resources.round_close_black_24pt_1x;
-            this.CloseBtn.Location = new System.Drawing.Point(869, 0);
-            this.CloseBtn.Name = "CloseBtn";
-            this.CloseBtn.Size = new System.Drawing.Size(42, 34);
-            this.CloseBtn.TabIndex = 0;
-            this.CloseBtn.UseVisualStyleBackColor = true;
-            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
-            this.CloseBtn.Leave += new System.EventHandler(this.CloseBtn_Leave);
-            this.CloseBtn.MouseHover += new System.EventHandler(this.CloseBtn_MouseHover);
-            // 
-            // MaxBtn
-            // 
-            this.MaxBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.MaxBtn.FlatAppearance.BorderSize = 0;
-            this.MaxBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MaxBtn.Image = global::Examen.Properties.Resources.round_maximize_black_24pt_1x;
-            this.MaxBtn.Location = new System.Drawing.Point(827, 0);
-            this.MaxBtn.Name = "MaxBtn";
-            this.MaxBtn.Size = new System.Drawing.Size(42, 34);
-            this.MaxBtn.TabIndex = 1;
-            this.MaxBtn.UseVisualStyleBackColor = true;
-            this.MaxBtn.Click += new System.EventHandler(this.MaxBtn_Click);
-            // 
-            // MinBtn
-            // 
-            this.MinBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.MinBtn.FlatAppearance.BorderSize = 0;
-            this.MinBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MinBtn.Image = global::Examen.Properties.Resources.round_minimize_black_24pt_1x;
-            this.MinBtn.Location = new System.Drawing.Point(785, 0);
-            this.MinBtn.Name = "MinBtn";
-            this.MinBtn.Size = new System.Drawing.Size(42, 34);
-            this.MinBtn.TabIndex = 2;
-            this.MinBtn.UseVisualStyleBackColor = true;
-            this.MinBtn.Click += new System.EventHandler(this.MinBtn_Click);
             // 
             // DashboardEtudiant
             // 

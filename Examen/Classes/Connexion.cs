@@ -18,7 +18,7 @@ namespace Examen.Classes
         public string connexion (string utilisateur)
         {
             string recup="";
-            req = "select mot_de_passe from table connexion where Nom_utilisateur='" + utilisateur + "'";
+            req = "select Password from connexion where Username ='" + utilisateur + "'";
             try
             {
                 SqlDataReader retourner = u.commandeBDD(req).ExecuteReader();
@@ -71,7 +71,7 @@ namespace Examen.Classes
         {
             
             string prendreUtilisateur="";
-            req = "select Username from Connexion where Username ='"+Utilisateur+"'"; 
+            req = "select Username from Connexion where Username ='"+Utilisateur+"'";
             try
             {
                 SqlDataReader voirUsername = u.commandeBDD(req).ExecuteReader();
@@ -81,7 +81,7 @@ namespace Examen.Classes
                 {
                     if (motDePasse.Equals(confirm))
                     {
-                        req = "update connexion set Mot_de_passe ='" + motDePasse + "' where Nom_utilisateur='" + Utilisateur + "'";
+                        req = "update connexion set Password ='" + motDePasse + "' where Username='" + Utilisateur + "'";
                         u.commandeBDD(req);
                         int checkoperation = u.commandeBDD(req).ExecuteNonQuery();
                         if (checkoperation < 0)

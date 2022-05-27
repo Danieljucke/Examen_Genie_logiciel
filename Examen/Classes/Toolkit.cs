@@ -14,7 +14,7 @@ namespace Examen.Classes
         private string user_id;
         private string password;
         private string database;
-        private string chaine;
+        private string chaine = "server =MELO\\JUCKE_MELO; User Id = sa; pwd = 0978; database=Examen";
         public string Nom_server { get => nom_server; private set => nom_server = value; }
         public string User_id { get => user_id; private set => user_id = value; }
         public string Password { get => password; private set => password = value; }
@@ -35,7 +35,7 @@ namespace Examen.Classes
 
         private void attribuer_chaine()
         {
-            connexion = new SqlConnection(chaine);
+            connexion = new SqlConnection("server =MELO\\JUCKE_MELO; User Id = sa; pwd = 0978; database=Examen");
         }
         // a la place de créer des connexion dans toutes les classe il suffira de faire appel a cette methode pour créer une connexion avec la base de données 
        
@@ -103,7 +103,7 @@ namespace Examen.Classes
         // cette fonction va creer le mot de passe par defaut de l'adminstrateur dès la première ouverture de l'appliction et va lui retourner le password et le username pour qu'il se connecte 
         public void CreerAdmiAcess ()
         {
-            req = "insert into Connexion values('Admin','Admin1234','@admin.com')";
+            req = "insert into Connexion values('Admin','"+ConvertirMotdepasse("Admin1234") +"','@admin.com')";
             try
             {
                 int compte = commandeBDD(req).ExecuteNonQuery();
@@ -217,7 +217,7 @@ namespace Examen.Classes
             SqlDataReader lire = commandeBDD(requete).ExecuteReader();
             while (lire.Read())
             {
-                f.Textb = "";
+                f.Text = "";
             }
         }
     }

@@ -14,6 +14,7 @@ namespace Examen.Forms
         Toolkit t = new Toolkit();
         Connexion con = new Connexion();
         Form _from = new MainDashboard();
+        
         //Form _Form = new Admindashboard();
         public ConnexionPage()
         {
@@ -27,12 +28,13 @@ namespace Examen.Forms
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            new ForgottenPwd().Show();
+            this.Hide();
         }
 
         private void Login_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(richTextBox1.Text) && !string.IsNullOrEmpty(richTextBox2.Text))
+            if (string.IsNullOrEmpty(richTextBox1.Text) && string.IsNullOrEmpty(richTextBox2.Text))
                 MessageBox.Show("Aucun champ ne doit être vide !");
             else
             {
@@ -71,13 +73,12 @@ namespace Examen.Forms
 
         private void Login_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!string.IsNullOrEmpty(richTextBox1.Text) && !string.IsNullOrEmpty(richTextBox2.Text))
+            if (richTextBox1.Text=="" && richTextBox2.Text=="")
                 MessageBox.Show("Aucun champ ne doit être vide !");
             else
             {
                 string check = con.connexion(richTextBox1.Text);
-                string check_admi = t.DeconvertirMotdepasse(check);
-                if (richTextBox1.Text == "admin" && check_admi == "1234")
+                if (richTextBox1.Text == "admin" && check == t.ConvertirMotdepasse("Admin1234"))
                 {
                     //_Form.Show();
                     //this.Hide();
@@ -91,6 +92,11 @@ namespace Examen.Forms
                     }
                 }
             }
+        }
+
+        private void richTextBox2_TextChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }

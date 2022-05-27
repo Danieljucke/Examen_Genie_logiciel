@@ -35,7 +35,7 @@ namespace Examen.Classes
 
         private void attribuer_chaine()
         {
-            connexion = new SqlConnection("server =MELO\\JUCKE_MELO; User Id = sa; pwd = 0978; database=Examen");
+            connexion = new SqlConnection(chaine);
         }
         // a la place de créer des connexion dans toutes les classe il suffira de faire appel a cette methode pour créer une connexion avec la base de données 
        
@@ -56,7 +56,7 @@ namespace Examen.Classes
         }
         public SqlCommand commandeBDD(string requette)
         {
-            _cmd = new SqlCommand(this.req, connexionBaseDD());
+            _cmd = new SqlCommand(requette, connexionBaseDD());
             return _cmd;
         }
 
@@ -66,7 +66,7 @@ namespace Examen.Classes
             req = "select * from " + table;
             SqlDataAdapter adapt;
             DataTable dt;
-            connexionBaseDD();
+            //connexionBaseDD();
             adapt = new SqlDataAdapter(req, connexionBaseDD());
             dt = new DataTable();
             adapt.Fill(dt);
@@ -171,7 +171,7 @@ namespace Examen.Classes
         //elle se prensentera comme suit ex: cne = nextcode(etduiant,cne);
         public int nextcode(string table, string key)
         {
-            string requete= "SELECT MAX('"+key+"') + 1 FROM '"+table+"'";
+            string requete= "SELECT MAX("+key+") + 1 FROM "+table;
             int lastcode=0;
             int next_code=0;
             try

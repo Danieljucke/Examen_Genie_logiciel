@@ -1,4 +1,3 @@
-
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +14,6 @@ namespace Examen.Forms
         {
             InitializeComponent();
         }
-
         private Form activePanel = null;
         private void openPanel(Form panelform)
         {
@@ -24,51 +22,50 @@ namespace Examen.Forms
             activePanel = panelform;
             panelform.TopLevel = false;
             panelform.Dock = DockStyle.Fill;
-            ContainerPanel.Controls.Add(panelform);
-            ContainerPanel.Tag = panelform;
+            MainPanel.Controls.Add(panelform);
+            MainPanel.Tag = panelform;
             panelform.Show();
         }
-
-        private void btnCours_Click(object sender, EventArgs e)
+        private void CourseBtn_Click(object sender, EventArgs e)
         {
-            pnlNav.Height = btnCours.Height;
-            pnlNav.Top = btnCours.Top;
-            pnlNav.Left = btnCours.Left;
-            btnCours.BackColor = Color.FromArgb(46, 51, 73);
+            pnlNav.Height = CourseBtn.Height;
+            pnlNav.Top = CourseBtn.Top;
+            pnlNav.Left = CourseBtn.Left;
+            CourseBtn.BackColor = Color.FromArgb(46, 51, 73);
             openPanel(new CoursPanel());
         }
 
-        private void btnProf_Click(object sender, EventArgs e)
+        private void ProfBtn_Click(object sender, EventArgs e)
         {
-            pnlNav.Height = btnProf.Height;
-            pnlNav.Top = btnProf.Top;
-            pnlNav.Left = btnProf.Left;
-            btnProf.BackColor = Color.FromArgb(46, 51, 73);
+            pnlNav.Height = ProfBtn.Height;
+            pnlNav.Top = ProfBtn.Top;
+            pnlNav.Left = ProfBtn.Left;
+            ProfBtn.BackColor = Color.FromArgb(46, 51, 73);
             openPanel(new ProfPanel());
         }
 
-        private void btnCours_Leave(object sender, EventArgs e)
+        private void SalleBtn_Click(object sender, EventArgs e)
         {
-            btnCours.BackColor = Color.FromArgb(24, 30, 54);
-        }
-
-        private void btnSalle_Click(object sender, EventArgs e)
-        {
-            pnlNav.Height = btnSalle.Height;
-            pnlNav.Top = btnSalle.Top;
-            pnlNav.Left = btnSalle.Left;
-            btnSalle.BackColor = Color.FromArgb(46, 51, 73);
+            pnlNav.Height = SalleBtn.Height;
+            pnlNav.Top = SalleBtn.Top;
+            pnlNav.Left = SalleBtn.Left;
+            SalleBtn.BackColor = Color.FromArgb(46, 51, 73);
             openPanel(new SallePanel());
         }
 
-        private void btnProf_Leave(object sender, EventArgs e)
+        private void CourseBtn_Leave(object sender, EventArgs e)
         {
-            btnProf.BackColor = Color.FromArgb(24, 30, 54);
+            CourseBtn.BackColor = Color.FromArgb(24,30,54);
         }
 
-        private void btnSalle_Leave(object sender, EventArgs e)
+        private void ProfBtn_Leave(object sender, EventArgs e)
         {
-            btnSalle.BackColor = Color.FromArgb(24, 30, 54);
+            ProfBtn.BackColor = Color.FromArgb(24, 30, 54);
+        }
+
+        private void SalleBtn_Leave(object sender, EventArgs e)
+        {
+            SalleBtn.BackColor = Color.FromArgb(24, 30, 54);
         }
 
         private void CloseBtn_MouseHover(object sender, EventArgs e)
@@ -76,9 +73,9 @@ namespace Examen.Forms
             CloseBtn.BackColor = Color.FromArgb(184, 15, 10);
         }
 
-        private void CloseBtn_Leave(object sender, EventArgs e)
+        private void CloseBtn_Click(object sender, EventArgs e)
         {
-            CloseBtn.BackColor = Color.FromArgb(41, 56, 73);
+            this.Close();
         }
 
         private void MaxBtn_Click(object sender, EventArgs e)
@@ -91,10 +88,9 @@ namespace Examen.Forms
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void CloseBtn_Click_1(object sender, EventArgs e)
+        private void UserBtn_Click(object sender, EventArgs e)
         {
 
         }
     }
 }
-

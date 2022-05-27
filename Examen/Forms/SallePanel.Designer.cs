@@ -30,8 +30,8 @@ namespace Examen.Forms
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -46,24 +46,24 @@ namespace Examen.Forms
             this.panel1.Size = new System.Drawing.Size(694, 100);
             this.panel1.TabIndex = 0;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(116, 35);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(68, 30);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Salles";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Examen.Properties.Resources.round_apartment_black_24pt_3x;
             this.pictureBox1.Location = new System.Drawing.Point(30, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(83, 72);
+            this.pictureBox1.Size = new System.Drawing.Size(80, 72);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(119, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 30);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Salles";
             // 
             // SallePanel
             // 

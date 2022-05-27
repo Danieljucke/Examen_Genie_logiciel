@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jucke\\Documents\\Examen\\Examen.csproj": {}
+    "C:\\Users\\User\\Source\\Repos\\Examen_Genie_logiciel\\Examen\\Examen.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jucke\\Documents\\Examen\\Examen.csproj": {
+    "C:\\Users\\User\\Source\\Repos\\Examen_Genie_logiciel\\Examen\\Examen.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jucke\\Documents\\Examen\\Examen.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Source\\Repos\\Examen_Genie_logiciel\\Examen\\Examen.csproj",
         "projectName": "Examen",
-        "projectPath": "C:\\Users\\jucke\\Documents\\Examen\\Examen.csproj",
-        "packagesPath": "C:\\Users\\jucke\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jucke\\Documents\\Examen\\obj\\",
+        "projectPath": "C:\\Users\\User\\Source\\Repos\\Examen_Genie_logiciel\\Examen\\Examen.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Source\\Repos\\Examen_Genie_logiciel\\Examen\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\jucke\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://www.nuget.org/api/v2/": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {

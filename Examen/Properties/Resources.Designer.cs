@@ -73,6 +73,36 @@ namespace Examen.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap round_account_circle_black_24pt_3x {
+            get {
+                object obj = ResourceManager.GetObject("round_account_circle_black_24pt_3x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap round_apartment_black_24pt_3x {
+            get {
+                object obj = ResourceManager.GetObject("round_apartment_black_24pt_3x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap round_class_black_24pt_3x {
+            get {
+                object obj = ResourceManager.GetObject("round_class_black_24pt_3x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap round_close_black_24pt_1x {
             get {
                 object obj = ResourceManager.GetObject("round_close_black_24pt_1x", resourceCulture);
@@ -96,6 +126,26 @@ namespace Examen.Properties {
         internal static System.Drawing.Bitmap round_minimize_black_24pt_1x {
             get {
                 object obj = ResourceManager.GetObject("round_minimize_black_24pt_1x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap round_people_black_24pt_3x {
+            get {
+                object obj = ResourceManager.GetObject("round_people_black_24pt_3x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap round_person_black_24pt_3x {
+            get {
+                object obj = ResourceManager.GetObject("round_person_black_24pt_3x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

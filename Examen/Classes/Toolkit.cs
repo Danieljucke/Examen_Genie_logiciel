@@ -23,8 +23,6 @@ namespace Examen.Classes
         protected string req;
         protected SqlConnection connexion;
         protected SqlCommand _cmd;
-        public DataSet MonDataSet;
-        public SqlDataAdapter _da;
         //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: parti base de données :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         public void prendreDataNewServeur(string nomServer, string UserId, string _password, string _database)
         {
@@ -66,7 +64,6 @@ namespace Examen.Classes
         public void AfficherDataGrid(string table, DataGridView da)
         {
             req = "select * from " + table;
-            SqlConnection con;
             SqlDataAdapter adapt;
             DataTable dt;
             connexionBaseDD();
@@ -193,5 +190,27 @@ namespace Examen.Classes
             }
             return next_code;
         }
+        // cette fonction va faire en sorte de charger les forms sur panel 
+        public void chargerForm (Form f, Panel p)
+        {
+            if (p.Controls.Count > 0)
+                p.Controls.RemoveAt(0);
+            
+            f.TopLevel = false;
+            f.Dock = DockStyle.Fill;
+            p.Controls.Add(f);
+            p.Tag = f;
+            f.Show();
+        }
+        // cette fonction va effacer tous les text box qui se trouvent dans un panel 
+        public void effacerTextbox (Control p)
+        {
+            foreach(Control _p in p.Controls )
+            {
+                if (_p is TextBox)
+                    _p.Text = String.Empty;
+            }
+        }
+           
     }
 }

@@ -211,6 +211,14 @@ namespace Examen.Classes
                     _p.Text = String.Empty;
             }
         }
-           
+         public void rechercher(string id, Form f)
+        {
+            string requete = "select * from  where id_";
+            SqlDataReader lire = commandeBDD(requete).ExecuteReader();
+            while (lire.Read())
+            {
+                f.Textb = "";
+            }
+        }
     }
 }

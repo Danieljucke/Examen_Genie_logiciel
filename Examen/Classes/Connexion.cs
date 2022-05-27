@@ -67,7 +67,7 @@ namespace Examen.Classes
             }
         }
         // motde passe oublié va se charger de changer le mot de passe et de checker si le username est bien present dans la base de données avant d'effectuer le changement
-        public void motDePasseOublie(string Utilisateur,string motDePasse)
+        public void motDePasseOublie(string Utilisateur,string motDePasse, string confirm)
         {
             
             string prendreUtilisateur="";
@@ -79,13 +79,19 @@ namespace Examen.Classes
                     prendreUtilisateur = voirUsername.GetString(0);
                 if (prendreUtilisateur == Utilisateur)
                 {
-                    req = "update connexion set Mot_de_passe ='"+motDePasse+"' where Nom_utilisateur='"+Utilisateur+"'";
-                    u.commandeBDD(req);
-                    int checkoperation = u.commandeBDD(req).ExecuteNonQuery();
-                    if (checkoperation < 0)
-                        MessageBox.Show("le mot de passe a été chnagé avec succès");
+                    if (motDePasse.Equals(confirm))
+                    {
+                        req = "update connexion set Mot_de_passe ='" + motDePasse + "' where Nom_utilisateur='" + Utilisateur + "'";
+                        u.commandeBDD(req);
+                        int checkoperation = u.commandeBDD(req).ExecuteNonQuery();
+                        if (checkoperation < 0)
+                            MessageBox.Show("le mot de passe a été chnagé avec succès");
+                        else
+                            MessageBox.Show("l'opération n'a pas abouti");
+                    }
                     else
-                        MessageBox.Show("l'opération n'a pas abouti");
+                        MessageBox.Show("le mot de passe n'est pas le même");
+                   
                 }
                 else
                 {

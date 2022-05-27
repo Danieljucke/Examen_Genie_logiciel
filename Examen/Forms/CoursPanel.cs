@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Examen.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,9 +11,11 @@ namespace Examen.Forms
 {
     public partial class CoursPanel : Form
     {
+        Toolkit t = new Toolkit();
         public CoursPanel()
         {
             InitializeComponent();
+            t.AfficherDataGrid("Cours", CoursView);
         }
     }
 }

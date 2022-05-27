@@ -1,0 +1,96 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
+using Examen.Classes;
+
+namespace Examen.Forms
+{
+    public partial class ConnexionPage : Form
+    {
+        Toolkit t = new Toolkit();
+        Connexion con = new Connexion();
+        Form _from = new MainDashboard();
+        //Form _Form = new Admindashboard();
+        public ConnexionPage()
+        {
+            InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void Login_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(richTextBox1.Text) && !string.IsNullOrEmpty(richTextBox2.Text))
+                MessageBox.Show("Aucun champ ne doit être vide !");
+            else
+            {
+                string check = con.connexion(richTextBox1.Text);
+                string check_admi = t.DeconvertirMotdepasse(check);
+                if (richTextBox1.Text=="admin" && check_admi=="1234")
+                {
+                    //_Form.Show();
+                    //this.Hide();
+                }
+                else
+                {
+                    if (check.Equals(t.ConvertirMotdepasse(richTextBox2.Text)))
+                    {
+                        _from.Show();
+                        this.Hide();
+                    }
+                }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void Login_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(richTextBox1.Text) && !string.IsNullOrEmpty(richTextBox2.Text))
+                MessageBox.Show("Aucun champ ne doit être vide !");
+            else
+            {
+                string check = con.connexion(richTextBox1.Text);
+                string check_admi = t.DeconvertirMotdepasse(check);
+                if (richTextBox1.Text == "admin" && check_admi == "1234")
+                {
+                    //_Form.Show();
+                    //this.Hide();
+                }
+                else
+                {
+                    if (check.Equals(t.ConvertirMotdepasse(richTextBox2.Text)))
+                    {
+                        _from.Show();
+                        this.Hide();
+                    }
+                }
+            }
+        }
+    }
+}

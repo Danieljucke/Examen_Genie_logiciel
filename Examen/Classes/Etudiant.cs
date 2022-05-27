@@ -54,9 +54,11 @@ namespace Examen.Classes
             Faculte = faculte;
             Option = option;
             Phone = phone;
-            Birthdate = birthdate;
-            Level = level;
-            requette = "insert into etudiant values ('" + cne + "','" + nom + "','" + postnom + "','" + prenom + "','" + sex + "','" + adress + "','" + faculte + "','" + option + "','" + phone + "','" + birthdate + "','" + level + "')";
+            dateNaissance = dateNaissance;
+            Parcours = parcours;
+            AnneeBac = AnneeBac;
+            
+            requette = "insert into etudiant values ('" + cne + "','" + nom + "','" + postnom + "','" + prenom + "','" + sexe + "','" + dateNaissance + "','" + Adresse + "','" + telephone + "','" + Email + "','" + Option + "','" + Parcours +  "','" + "','" + AnneeBac   "')";
             try
             {
                 compte = t.commandeBDD(requette).ExecuteNonQuery();

@@ -93,6 +93,7 @@ namespace Examen.Forms
             this.CloseBtn.Size = new System.Drawing.Size(42, 39);
             this.CloseBtn.TabIndex = 0;
             this.CloseBtn.UseVisualStyleBackColor = true;
+            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
             // 
             // panel2
             // 
@@ -205,7 +206,7 @@ namespace Examen.Forms
             this.MainPanel.Size = new System.Drawing.Size(611, 749);
             this.MainPanel.TabIndex = 2;
             // 
-            // DashboardProf
+            // MainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -215,7 +216,7 @@ namespace Examen.Forms
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "DashboardProf";
+            this.Name = "MainDashboard";
             this.Text = "DashboardProf";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

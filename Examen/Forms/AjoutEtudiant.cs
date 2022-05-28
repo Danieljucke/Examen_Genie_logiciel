@@ -14,15 +14,5 @@ namespace Examen.Forms
         {
             InitializeComponent();
         }
-
-        private void textBox9_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AjoutEtudiant_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

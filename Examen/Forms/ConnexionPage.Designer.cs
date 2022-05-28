@@ -143,6 +143,7 @@ namespace Examen.Forms
             this.richTextBox2.Size = new System.Drawing.Size(899, 93);
             this.richTextBox2.TabIndex = 3;
             this.richTextBox2.Text = "";
+            this.richTextBox2.TextChanged += new System.EventHandler(this.richTextBox2_TextChanged);
             // 
             // richTextBox1
             // 

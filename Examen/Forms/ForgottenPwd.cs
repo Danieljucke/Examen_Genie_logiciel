@@ -46,10 +46,12 @@ namespace Examen.Forms
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(richTextBox1.Text) && !string.IsNullOrEmpty(textBox1.Text) && !string.IsNullOrEmpty(textBox2.Text))
+            if (string.IsNullOrEmpty(textBox1.Text) && string.IsNullOrEmpty(textBox2.Text))
                 MessageBox.Show("Aucun champ ne doit être vide !");
             else
-                    con.motDePasseOublie(richTextBox1.Text, t.ConvertirMotdepasse(textBox1.Text), t.ConvertirMotdepasse(textBox2.Text));
+                    con.motDePasseOublie(richTextBox1.Text.ToString(), t.ConvertirMotdepasse(textBox1.Text), t.ConvertirMotdepasse(textBox2.Text));
+            new MainDashboard().Show();
+            this.Hide();
         }
 
         private void SaveBtn_keyPress(object sender, KeyPressEventArgs e)
@@ -60,6 +62,8 @@ namespace Examen.Forms
             {
                 if (e.KeyChar == (char)13)
                     con.motDePasseOublie(richTextBox1.Text, t.ConvertirMotdepasse(textBox1.Text), t.ConvertirMotdepasse(textBox2.Text));
+                new MainDashboard().Show();
+                this.Hide();
             }
         }
 

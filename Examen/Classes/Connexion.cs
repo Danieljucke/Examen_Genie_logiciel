@@ -85,9 +85,9 @@ namespace Examen.Classes
                         u.commandeBDD(req);
                         int checkoperation = u.commandeBDD(req).ExecuteNonQuery();
                         if (checkoperation < 0)
-                            MessageBox.Show("le mot de passe a été chnagé avec succès");
+                             MessageBox.Show("l'opération n'a pas abouti");
                         else
-                            MessageBox.Show("l'opération n'a pas abouti");
+                           MessageBox.Show("le mot de passe a été chnagé avec succès");
                     }
                     else
                         MessageBox.Show("le mot de passe n'est pas le même");

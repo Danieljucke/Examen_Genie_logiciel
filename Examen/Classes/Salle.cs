@@ -20,9 +20,9 @@ namespace Examen.Classes
 
 
         // Méthodes
-        public void AjouterSalle(int id, string nom,string type, int capacite)
+        public void AjouterSalle(string nom,string type, int capacite)
         {
-            id=t.nextcode("salle","id_salle");
+            int id=t.nextcode("salle","id_salle");
             requette = "insert into salle values ('" + id + "','" + type + "','" + capacite + "')";
             try
             {

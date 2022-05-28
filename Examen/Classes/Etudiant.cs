@@ -42,10 +42,10 @@ namespace Examen.Classes
             Level = "bac1";
         }
 
-        public void AddStudent(string cne, string nom, string postnom, string prenom, char sex, string adress, string faculte, string option, string phone, string birthdate, string level)
+        public void AddStudent(string cne, string nom, string postnom, string prenom, char sex, string birthdate, string adresse, string telephone , string mail, int frais , string annebac, int id_option, int id_parcours)
         {
 
-            Cne = cne;
+            /*Cne = cne;
             Nom = nom;
             Postnom = postnom;
             Prenom = prenom;
@@ -55,8 +55,8 @@ namespace Examen.Classes
             Option = option;
             Phone = phone;
             Birthdate = birthdate;
-            Level = level;
-            requette = "insert into etudiant values ('" + cne + "','" + nom + "','" + postnom + "','" + prenom + "','" + sex + "','" + adress + "','" + faculte + "','" + option + "','" + phone + "','" + birthdate + "','" + level + "')";
+            Level = level;*/
+            requette = "insert into etudiant values ('" + cne + "','" + nom + "','" + postnom + "','" + prenom + "','" + sex + "','" + adresse + "','" + telephone + "','" + mail + "','" + frais + "','" + annebac + "','" + id_option + "','"+id_parcours+"')";
             try
             {
                 compte = t.commandeBDD(requette).ExecuteNonQuery();

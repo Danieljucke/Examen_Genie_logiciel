@@ -20,6 +20,7 @@ namespace Examen.Classes
         public string Password { get => password; private set => password = value; }
         public string Database { get => database; private set => database = value; }
         public string Chaine { get => chaine; private set => chaine = value; }
+
         protected string req;
         protected SqlConnection connexion;
         protected SqlCommand _cmd;
@@ -203,15 +204,8 @@ namespace Examen.Classes
             f.Show();
         }
         // cette fonction va effacer tous les text box qui se trouvent dans un panel 
-        public void effacerTextbox (Control p)
-        {
-            foreach(Control _p in p.Controls )
-            {
-                if (_p is TextBox)
-                    _p.Text = String.Empty;
-            }
-        }
-         public void rechercher(string id, Form f)
+        
+        public void rechercher(string id, Form f)
         {
             string requete = "select * from  where id_";
             SqlDataReader lire = commandeBDD(requete).ExecuteReader();

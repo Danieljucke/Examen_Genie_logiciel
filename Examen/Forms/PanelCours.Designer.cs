@@ -52,7 +52,7 @@ namespace Examen.Forms
             // 
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            //this.button2.Image = global::Examen.Properties.Resources.rou;
+            //this.button2.Image = global::Examen.Properties.Resources.round_create_black_36pt_2x;
             this.button2.Location = new System.Drawing.Point(236, 339);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(138, 124);

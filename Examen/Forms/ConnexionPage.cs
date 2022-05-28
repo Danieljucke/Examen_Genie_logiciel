@@ -32,16 +32,18 @@ namespace Examen.Forms
 
         private void Login_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(richTextBox1.Text) && !string.IsNullOrEmpty(richTextBox2.Text))
+            if (string.IsNullOrEmpty(richTextBox1.Text) || string.IsNullOrEmpty(richTextBox2.Text))
                 MessageBox.Show("Aucun champ ne doit être vide !");
             else
             {
                 string check = con.connexion(richTextBox1.Text);
+                if (string.IsNullOrEmpty(check))
+                    MessageBox.Show("ce username n'existe pas ou est incorrect!");
                 string check_admi = t.DeconvertirMotdepasse(check);
-                if (richTextBox1.Text=="admin" && check_admi=="1234")
+                if (richTextBox1.Text == "Admin" && check_admi == "Admin1234")
                 {
-                    //_Form.Show();
-                    //this.Hide();
+                    new AdminDash().Show();
+                    this.Hide();
                 }
                 else
                 {
@@ -52,6 +54,7 @@ namespace Examen.Forms
                     }
                 }
             }
+        
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -71,16 +74,18 @@ namespace Examen.Forms
 
         private void Login_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!string.IsNullOrEmpty(richTextBox1.Text) && !string.IsNullOrEmpty(richTextBox2.Text))
+            if (string.IsNullOrEmpty(richTextBox1.Text) || string.IsNullOrEmpty(richTextBox2.Text))
                 MessageBox.Show("Aucun champ ne doit être vide !");
             else
             {
                 string check = con.connexion(richTextBox1.Text);
+                if (string.IsNullOrEmpty(check))
+                    MessageBox.Show("ce username n'existe pas ou est incorrect!");
                 string check_admi = t.DeconvertirMotdepasse(check);
-                if (richTextBox1.Text == "admin" && check_admi == "1234")
+                if (richTextBox1.Text == "Admin" && check_admi == "Admin1234")
                 {
-                    //_Form.Show();
-                    //this.Hide();
+                    new AdminDash().Show();
+                    this.Hide();
                 }
                 else
                 {
@@ -92,5 +97,6 @@ namespace Examen.Forms
                 }
             }
         }
+
     }
 }

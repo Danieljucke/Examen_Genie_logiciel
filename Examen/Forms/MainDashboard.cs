@@ -69,10 +69,5 @@ namespace Examen.Forms
         {
             SalleBtn.BackColor = Color.FromArgb(24, 30, 54);
         }
-
-        private void CloseBtn_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

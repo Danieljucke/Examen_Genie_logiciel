@@ -18,7 +18,7 @@ namespace Examen.Classes
             if (compte < 0)
                 MessageBox.Show("Payement Non Effectué");
             else
-                MessageBox.Show("Payement Effectué");
+                MessageBox.Show("Payement Effectué et voici le numero de facture "+nbfacture);
         }
         public void calculMontant (string cne )
         {

@@ -14,7 +14,7 @@ namespace Examen.Classes
         private string user_id;
         private string password;
         private string database;
-        private string chaine = "server =MELO\\JUCKE_MELO; User Id = sa; pwd = 0978; database=Examen";
+        private string chaine ;
         public string Nom_server { get => nom_server; private set => nom_server = value; }
         public string User_id { get => user_id; private set => user_id = value; }
         public string Password { get => password; private set => password = value; }
@@ -104,12 +104,13 @@ namespace Examen.Classes
         // cette fonction va creer le mot de passe par defaut de l'adminstrateur dès la première ouverture de l'appliction et va lui retourner le password et le username pour qu'il se connecte 
         public void CreerAdmiAcess ()
         {
-            req = "insert into Connexion values('Admin','"+ConvertirMotdepasse("Admin1234") +"','@admin.com')";
+            string cont = ConvertirMotdepasse("Admin1234");
+            req = "insert into Connexion values('Admin','"+ cont +"','@admin.com')";
             try
             {
                 int compte = commandeBDD(req).ExecuteNonQuery();
                 if (compte > 0)
-                    MessageBox.Show("bonjour Mr/Me l'administrateur votre Mot de passe par defaut est Admin1234 et le nom d'utilisateur est Admin");
+                    MessageBox.Show("bonjour Mr/Me l'administrateur votre Mot de passe par defaut est "+ DeconvertirMotdepasse(cont) +" et le nom d'utilisateur est Admin");
             }
             catch(Exception ex)
             {

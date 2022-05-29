@@ -45,5 +45,10 @@ namespace Examen.Forms
                 textBox1.Focus();
             }
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

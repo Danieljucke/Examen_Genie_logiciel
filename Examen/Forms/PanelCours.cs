@@ -14,5 +14,20 @@ namespace Examen.Forms
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new AjoutCours().ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            new ModCours().ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            new SuppCours().ShowDialog();
+        }
     }
 }

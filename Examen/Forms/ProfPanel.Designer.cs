@@ -46,7 +46,7 @@ namespace Examen.Forms
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1685, 273);
+            this.panel1.Size = new System.Drawing.Size(1383, 273);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -79,7 +79,7 @@ namespace Examen.Forms
             this.ProfView.Name = "ProfView";
             this.ProfView.RowHeadersWidth = 102;
             this.ProfView.RowTemplate.Height = 49;
-            this.ProfView.Size = new System.Drawing.Size(1685, 1378);
+            this.ProfView.Size = new System.Drawing.Size(1383, 1190);
             this.ProfView.TabIndex = 1;
             // 
             // ProfPanel
@@ -87,7 +87,7 @@ namespace Examen.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(1685, 1651);
+            this.ClientSize = new System.Drawing.Size(1383, 1463);
             this.Controls.Add(this.ProfView);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

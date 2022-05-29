@@ -43,5 +43,10 @@ namespace Examen.Forms
                 textBox1.Focus();
             }
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

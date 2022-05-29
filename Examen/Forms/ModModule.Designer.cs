@@ -39,6 +39,12 @@ namespace Examen.Forms
             this.panel3 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -135,20 +141,26 @@ namespace Examen.Forms
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.textBox4);
+            this.panel3.Controls.Add(this.textBox3);
+            this.panel3.Controls.Add(this.textBox2);
             this.panel3.Controls.Add(this.textBox1);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 273);
             this.panel3.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1044, 93);
+            this.panel3.Size = new System.Drawing.Size(1044, 391);
             this.panel3.TabIndex = 3;
             // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(245, 16);
+            this.textBox1.Location = new System.Drawing.Point(274, 19);
             this.textBox1.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(583, 40);
@@ -164,6 +176,64 @@ namespace Examen.Forms
             this.label2.Size = new System.Drawing.Size(58, 50);
             this.label2.TabIndex = 0;
             this.label2.Text = "ID";
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Location = new System.Drawing.Point(259, 106);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(583, 40);
+            this.textBox2.TabIndex = 2;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox3.Location = new System.Drawing.Point(274, 314);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(583, 40);
+            this.textBox3.TabIndex = 3;
+            // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox4.Location = new System.Drawing.Point(274, 180);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(583, 40);
+            this.textBox4.TabIndex = 4;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(72, 106);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(190, 41);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Non_Module";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 180);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(222, 41);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Charge_Horaire";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(39, 313);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(179, 41);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Nom_Classe";
             // 
             // ModModule
             // 
@@ -203,8 +273,11 @@ namespace Examen.Forms
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
-
-
-
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }

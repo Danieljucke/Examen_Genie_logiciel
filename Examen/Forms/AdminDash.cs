@@ -111,5 +111,19 @@ namespace Examen.Forms
         {
             this.Close();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            pnlNav.Height = button6.Height;
+            pnlNav.Top = button6.Top;
+            pnlNav.Left = button6.Left;
+            button6.BackColor = Color.FromArgb(46, 51, 73);
+            openPanel(new ShowPanel());
+        }
+
+        private void button6_Leave(object sender, EventArgs e)
+        {
+            button6.BackColor = Color.FromArgb(24, 30, 54);
+        }
     }
 }

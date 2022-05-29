@@ -1,10 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Compile Update="Forms\AdminDash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\AjoutCours.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\AjoutEtudiant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\AjoutModule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\AjoutProf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\AjoutSalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\ConnexionPage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\CoursPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\DashboardEtudiant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\DashboardProf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\MainDashboard.cs">
@@ -16,10 +43,64 @@
     <Compile Update="Forms\ForgottenPwd.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\ModCours.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\ModEtudiant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\ModModule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\ModProf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\ModSalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\PanelCours.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\PanelEtudiant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\PanelModule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\PanelProf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\PanelSalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Payement.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\ProfPanel.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\SallePanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\ShowPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\SignInPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\SuppCours.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\SuppEtudiant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\SuppModule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\SuppProf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\SuppSalle.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\UserInfos.cs">

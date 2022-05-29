@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jucke\\Downloads\\Examen_Genie_logiciel-main\\Examen\\Examen.csproj": {}
+    "C:\\Users\\jucke\\Downloads\\examen - Copie\\Examen.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jucke\\Downloads\\Examen_Genie_logiciel-main\\Examen\\Examen.csproj": {
+    "C:\\Users\\jucke\\Downloads\\examen - Copie\\Examen.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jucke\\Downloads\\Examen_Genie_logiciel-main\\Examen\\Examen.csproj",
+        "projectUniqueName": "C:\\Users\\jucke\\Downloads\\examen - Copie\\Examen.csproj",
         "projectName": "Examen",
-        "projectPath": "C:\\Users\\jucke\\Downloads\\Examen_Genie_logiciel-main\\Examen\\Examen.csproj",
+        "projectPath": "C:\\Users\\jucke\\Downloads\\examen - Copie\\Examen.csproj",
         "packagesPath": "C:\\Users\\jucke\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jucke\\Downloads\\Examen_Genie_logiciel-main\\Examen\\obj\\",
+        "outputPath": "C:\\Users\\jucke\\Downloads\\examen - Copie\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

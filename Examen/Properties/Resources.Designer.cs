@@ -83,6 +83,16 @@ namespace Examen.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap round_add_black_36pt_2x {
+            get {
+                object obj = ResourceManager.GetObject("round_add_black_36pt_2x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap round_apartment_black_24pt_3x {
             get {
                 object obj = ResourceManager.GetObject("round_apartment_black_24pt_3x", resourceCulture);
@@ -106,6 +116,26 @@ namespace Examen.Properties {
         internal static System.Drawing.Bitmap round_close_black_24pt_1x {
             get {
                 object obj = ResourceManager.GetObject("round_close_black_24pt_1x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap round_create_black_36pt_2x {
+            get {
+                object obj = ResourceManager.GetObject("round_create_black_36pt_2x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap round_delete_black_36pt_2x {
+            get {
+                object obj = ResourceManager.GetObject("round_delete_black_36pt_2x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

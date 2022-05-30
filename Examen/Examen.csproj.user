@@ -25,12 +25,6 @@
     <Compile Update="Forms\CoursPanel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\DashboardEtudiant.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Forms\DashboardProf.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>

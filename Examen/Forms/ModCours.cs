@@ -35,14 +35,25 @@ namespace Examen.Forms
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(Id_cours.Text))
+            if (string.IsNullOrEmpty(id_cours.Text))
                 MessageBox.Show("saisir l'id du cours avant de chercher!");
             else
             {
-                t.search(Id_cours.Text, "Cours", "id_cours", dataGridView1);
+                t.search(id_cours.Text, "Cours", "id_cours", dataGridView1);
                 ClearTextBoxes();
-                Id_cours.Focus();
+                id_cours.Focus();
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            t.Selectionner(panel3, dataGridView1);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            c.Modifiercours(int.Parse(id_cours.Text), Nom_Cours.Text, int.Parse(id_salle.Text),int.Parse(CIN.Text), int.Parse(id_module.Text));
+            dataGridView1.Refresh();
         }
     }
 }

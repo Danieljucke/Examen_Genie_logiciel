@@ -36,54 +36,25 @@ namespace Examen.Forms
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBox1.Text))
+            if (string.IsNullOrEmpty(CIN.Text))
                 MessageBox.Show("saisir le CIN avant de chercher!");
             else
             {
-                t.search(textBox1.Text, "Professeur", "CIN", dataGridView1);
+                t.search(CIN.Text, "Professeur", "CIN", dataGridView1);
                 ClearTextBoxes();
-                textBox1.Focus();
+                CIN.Focus();
             }
         }
 
-        private void textBox8_TextChanged(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
-
+            t.Selectionner(panel3, dataGridView1);
         }
 
-        private void textBox10_TextChanged(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
+            prof.ModifierProf(CIN.Text, Nom.Text, Postnom.Text, Prenom.Text, Convert.ToChar(Sexe.Text), DateNaissance.Text, Adresse.Text, telephone.Text, Email.Text, Titre.Text);
+            dataGridView1.Refresh();
         }
     }
 }

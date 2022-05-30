@@ -36,19 +36,30 @@ namespace Examen.Forms
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBox1.Text))
+            if (string.IsNullOrEmpty(CNE.Text))
                 MessageBox.Show("saisir le CNE avant de chercher!");
             else
             {
-                t.search(textBox1.Text, "etudiant", "CNE", dataGridView1);
+                t.search(CNE.Text, "etudiant", "CNE", dataGridView1);
                 ClearTextBoxes();
-                textBox1.Focus();
+                CNE.Focus();
             }
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            t.Selectionner(panel3, dataGridView1);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            st.AddStudent(CNE.Text, Nom.Text, Postnom.Text, Prenom.Text, Convert.ToChar(Sexe.Text), DateNaissance.Text, Adresse.Text, telephone.Text, Email.Text, int.Parse(Frais.Text), AnneeObtentionBac.Text, int.Parse(id_option.Text), int.Parse(id_parcours.Text));
+            dataGridView1.Refresh();
         }
     }
 }

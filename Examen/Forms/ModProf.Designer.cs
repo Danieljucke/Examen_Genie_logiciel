@@ -33,6 +33,7 @@ namespace Examen.Forms
             this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -41,23 +42,23 @@ namespace Examen.Forms
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Email = new System.Windows.Forms.TextBox();
+            this.Adresse = new System.Windows.Forms.TextBox();
+            this.telephone = new System.Windows.Forms.TextBox();
+            this.DateNaissance = new System.Windows.Forms.TextBox();
+            this.Titre = new System.Windows.Forms.TextBox();
+            this.Nom = new System.Windows.Forms.TextBox();
+            this.CIN = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.Sexe = new System.Windows.Forms.TextBox();
+            this.Postnom = new System.Windows.Forms.TextBox();
+            this.Prenom = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -80,7 +81,7 @@ namespace Examen.Forms
             // 
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(879, 36);
+            this.button3.Location = new System.Drawing.Point(1106, 8);
             this.button3.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(136, 145);
@@ -101,6 +102,7 @@ namespace Examen.Forms
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -110,6 +112,22 @@ namespace Examen.Forms
             this.panel2.Size = new System.Drawing.Size(1258, 273);
             this.panel2.TabIndex = 1;
             // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button4.ForeColor = System.Drawing.Color.DarkGray;
+            this.button4.Location = new System.Drawing.Point(452, 70);
+            this.button4.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(301, 101);
+            this.button4.TabIndex = 28;
+            this.button4.Text = "SELECTIONNER";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
@@ -117,13 +135,14 @@ namespace Examen.Forms
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.Color.DarkGray;
-            this.button2.Location = new System.Drawing.Point(622, 36);
+            this.button2.Location = new System.Drawing.Point(896, 70);
             this.button2.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(316, 169);
+            this.button2.Size = new System.Drawing.Size(301, 101);
             this.button2.TabIndex = 1;
             this.button2.Text = "MODIFIER";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -132,10 +151,10 @@ namespace Examen.Forms
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.DarkGray;
-            this.button1.Location = new System.Drawing.Point(245, 36);
+            this.button1.Location = new System.Drawing.Point(29, 70);
             this.button1.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(316, 169);
+            this.button1.Size = new System.Drawing.Size(301, 101);
             this.button1.TabIndex = 0;
             this.button1.Text = "CHERCHER";
             this.button1.UseVisualStyleBackColor = false;
@@ -198,17 +217,17 @@ namespace Examen.Forms
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.textBox10);
-            this.panel3.Controls.Add(this.textBox11);
-            this.panel3.Controls.Add(this.textBox9);
-            this.panel3.Controls.Add(this.textBox7);
-            this.panel3.Controls.Add(this.textBox6);
-            this.panel3.Controls.Add(this.textBox1);
-            this.panel3.Controls.Add(this.textBox2);
+            this.panel3.Controls.Add(this.Email);
+            this.panel3.Controls.Add(this.Adresse);
+            this.panel3.Controls.Add(this.telephone);
+            this.panel3.Controls.Add(this.DateNaissance);
+            this.panel3.Controls.Add(this.Titre);
+            this.panel3.Controls.Add(this.Nom);
+            this.panel3.Controls.Add(this.CIN);
             this.panel3.Controls.Add(this.textBox8);
-            this.panel3.Controls.Add(this.textBox5);
-            this.panel3.Controls.Add(this.textBox4);
-            this.panel3.Controls.Add(this.textBox3);
+            this.panel3.Controls.Add(this.Sexe);
+            this.panel3.Controls.Add(this.Postnom);
+            this.panel3.Controls.Add(this.Prenom);
             this.panel3.Controls.Add(this.label12);
             this.panel3.Controls.Add(this.label11);
             this.panel3.Controls.Add(this.label10);
@@ -223,59 +242,78 @@ namespace Examen.Forms
             this.panel3.Location = new System.Drawing.Point(0, 192);
             this.panel3.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1258, 970);
+            this.panel3.Size = new System.Drawing.Size(1258, 965);
             this.panel3.TabIndex = 3;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
-            // textBox9
+            // Email
             // 
-            this.textBox9.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox9.Location = new System.Drawing.Point(355, 670);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(583, 40);
-            this.textBox9.TabIndex = 24;
+            this.Email.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.Email.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Email.Location = new System.Drawing.Point(355, 776);
+            this.Email.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.Email.Name = "Email";
+            this.Email.Size = new System.Drawing.Size(583, 40);
+            this.Email.TabIndex = 27;
             // 
-            // textBox7
+            // Adresse
             // 
-            this.textBox7.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox7.Location = new System.Drawing.Point(355, 565);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(583, 40);
-            this.textBox7.TabIndex = 23;
+            this.Adresse.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.Adresse.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Adresse.Location = new System.Drawing.Point(355, 870);
+            this.Adresse.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.Adresse.Name = "Adresse";
+            this.Adresse.Size = new System.Drawing.Size(583, 40);
+            this.Adresse.TabIndex = 26;
             // 
-            // textBox6
+            // telephone
             // 
-            this.textBox6.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Location = new System.Drawing.Point(355, 459);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(583, 40);
-            this.textBox6.TabIndex = 22;
+            this.telephone.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.telephone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.telephone.Location = new System.Drawing.Point(355, 670);
+            this.telephone.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.telephone.Name = "telephone";
+            this.telephone.Size = new System.Drawing.Size(583, 40);
+            this.telephone.TabIndex = 24;
             // 
-            // textBox1
+            // DateNaissance
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(355, 95);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(583, 40);
-            this.textBox1.TabIndex = 21;
+            this.DateNaissance.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.DateNaissance.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DateNaissance.Location = new System.Drawing.Point(355, 565);
+            this.DateNaissance.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.DateNaissance.Name = "DateNaissance";
+            this.DateNaissance.Size = new System.Drawing.Size(583, 40);
+            this.DateNaissance.TabIndex = 23;
             // 
-            // textBox2
+            // Titre
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Location = new System.Drawing.Point(355, 16);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(583, 40);
-            this.textBox2.TabIndex = 20;
+            this.Titre.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.Titre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Titre.Location = new System.Drawing.Point(355, 459);
+            this.Titre.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.Titre.Name = "Titre";
+            this.Titre.Size = new System.Drawing.Size(583, 40);
+            this.Titre.TabIndex = 22;
+            // 
+            // Nom
+            // 
+            this.Nom.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.Nom.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Nom.Location = new System.Drawing.Point(355, 95);
+            this.Nom.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.Nom.Name = "Nom";
+            this.Nom.Size = new System.Drawing.Size(583, 40);
+            this.Nom.TabIndex = 21;
+            // 
+            // CIN
+            // 
+            this.CIN.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.CIN.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.CIN.Location = new System.Drawing.Point(355, 16);
+            this.CIN.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.CIN.Name = "CIN";
+            this.CIN.Size = new System.Drawing.Size(583, 40);
+            this.CIN.TabIndex = 20;
             // 
             // textBox8
             // 
@@ -286,38 +324,36 @@ namespace Examen.Forms
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(583, 40);
             this.textBox8.TabIndex = 19;
-            this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
-            // textBox5
+            // Sexe
             // 
-            this.textBox5.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Location = new System.Drawing.Point(348, 356);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(583, 40);
-            this.textBox5.TabIndex = 16;
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.Sexe.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.Sexe.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Sexe.Location = new System.Drawing.Point(348, 356);
+            this.Sexe.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.Sexe.Name = "Sexe";
+            this.Sexe.Size = new System.Drawing.Size(590, 40);
+            this.Sexe.TabIndex = 16;
             // 
-            // textBox4
+            // Postnom
             // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Location = new System.Drawing.Point(355, 179);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(583, 40);
-            this.textBox4.TabIndex = 15;
+            this.Postnom.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.Postnom.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Postnom.Location = new System.Drawing.Point(355, 179);
+            this.Postnom.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.Postnom.Name = "Postnom";
+            this.Postnom.Size = new System.Drawing.Size(583, 40);
+            this.Postnom.TabIndex = 15;
             // 
-            // textBox3
+            // Prenom
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Location = new System.Drawing.Point(348, 274);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(583, 40);
-            this.textBox3.TabIndex = 14;
+            this.Prenom.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.Prenom.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Prenom.Location = new System.Drawing.Point(348, 274);
+            this.Prenom.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.Prenom.Name = "Prenom";
+            this.Prenom.Size = new System.Drawing.Size(583, 40);
+            this.Prenom.TabIndex = 14;
             // 
             // label12
             // 
@@ -329,7 +365,6 @@ namespace Examen.Forms
             this.label12.Size = new System.Drawing.Size(95, 50);
             this.label12.TabIndex = 12;
             this.label12.Text = "Titre";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // label11
             // 
@@ -341,7 +376,6 @@ namespace Examen.Forms
             this.label11.Size = new System.Drawing.Size(110, 50);
             this.label11.TabIndex = 11;
             this.label11.Text = "Email";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label10
             // 
@@ -353,7 +387,6 @@ namespace Examen.Forms
             this.label10.Size = new System.Drawing.Size(189, 50);
             this.label10.TabIndex = 10;
             this.label10.Text = "Telephone";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label9
             // 
@@ -365,7 +398,6 @@ namespace Examen.Forms
             this.label9.Size = new System.Drawing.Size(151, 50);
             this.label9.TabIndex = 9;
             this.label9.Text = "Adresse";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label8
             // 
@@ -374,9 +406,9 @@ namespace Examen.Forms
             this.label8.Location = new System.Drawing.Point(36, 555);
             this.label8.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(263, 50);
+            this.label8.Size = new System.Drawing.Size(273, 50);
             this.label8.TabIndex = 8;
-            this.label8.Text = "DateNaissance";
+            this.label8.Text = "Date Naissance";
             // 
             // label7
             // 
@@ -389,35 +421,15 @@ namespace Examen.Forms
             this.label7.TabIndex = 7;
             this.label7.Text = "Sexe";
             // 
-            // textBox11
-            // 
-            this.textBox11.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox11.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox11.Location = new System.Drawing.Point(338, 891);
-            this.textBox11.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(583, 40);
-            this.textBox11.TabIndex = 26;
-            // 
-            // textBox10
-            // 
-            this.textBox10.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox10.Location = new System.Drawing.Point(338, 776);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(583, 40);
-            this.textBox10.TabIndex = 27;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 1162);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 1157);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 102;
             this.dataGridView1.RowTemplate.Height = 49;
-            this.dataGridView1.Size = new System.Drawing.Size(1258, 624);
+            this.dataGridView1.Size = new System.Drawing.Size(1258, 629);
             this.dataGridView1.TabIndex = 6;
             // 
             // ModProf
@@ -461,22 +473,23 @@ namespace Examen.Forms
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox Sexe;
+        private System.Windows.Forms.TextBox Postnom;
+        private System.Windows.Forms.TextBox Prenom;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox Nom;
+        private System.Windows.Forms.TextBox CIN;
+        private System.Windows.Forms.TextBox DateNaissance;
+        private System.Windows.Forms.TextBox Titre;
+        private System.Windows.Forms.TextBox telephone;
+        private System.Windows.Forms.TextBox Email;
+        private System.Windows.Forms.TextBox Adresse;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button4;
     }
 }

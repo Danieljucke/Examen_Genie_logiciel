@@ -34,19 +34,30 @@ namespace Examen.Forms
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBox1.Text))
+            if (string.IsNullOrEmpty(id_module.Text))
                 MessageBox.Show("saisir l'id du cours avant de chercher!");
             else
             {
-                t.search(textBox1.Text, "Module", "id_module", dataGridView1);
+                t.search(id_module.Text, "Module", "id_module", dataGridView1);
                 ClearTextBoxes();
-                textBox1.Focus();
+                id_module.Focus();
             }
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            t.Selectionner(panel1, dataGridView1);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            mod.AjouterModule(Nom_Module.Text, int.Parse(Moyenne_generale.Text), int.Parse(charge_horaire.Text), int.Parse(id_classe.Text));
+            dataGridView1.Refresh();
         }
     }
 }

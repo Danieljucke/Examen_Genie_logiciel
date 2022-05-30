@@ -44,9 +44,8 @@ namespace Examen.Forms
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1383, 273);
+            this.panel1.Size = new System.Drawing.Size(665, 100);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -54,20 +53,18 @@ namespace Examen.Forms
             this.label1.AutoSize = true;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(289, 112);
-            this.label1.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.label1.Location = new System.Drawing.Point(119, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(315, 71);
+            this.label1.Size = new System.Drawing.Size(125, 30);
             this.label1.TabIndex = 1;
             this.label1.Text = "Professeurs";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Examen.Properties.Resources.round_person_black_24pt_3x;
-            this.pictureBox1.Location = new System.Drawing.Point(56, 33);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.pictureBox1.Location = new System.Drawing.Point(23, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(194, 197);
+            this.pictureBox1.Size = new System.Drawing.Size(80, 72);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -75,23 +72,23 @@ namespace Examen.Forms
             // 
             this.ProfView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ProfView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProfView.Location = new System.Drawing.Point(0, 273);
+            this.ProfView.Location = new System.Drawing.Point(0, 100);
+            this.ProfView.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.ProfView.Name = "ProfView";
             this.ProfView.RowHeadersWidth = 102;
             this.ProfView.RowTemplate.Height = 49;
-            this.ProfView.Size = new System.Drawing.Size(1383, 1190);
+            this.ProfView.Size = new System.Drawing.Size(665, 444);
             this.ProfView.TabIndex = 1;
             // 
             // ProfPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(1383, 1463);
+            this.ClientSize = new System.Drawing.Size(665, 544);
             this.Controls.Add(this.ProfView);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.Name = "ProfPanel";
             this.Text = "ProfPanel";
             this.panel1.ResumeLayout(false);

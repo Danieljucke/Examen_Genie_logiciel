@@ -27,7 +27,11 @@ namespace Examen.Classes
         //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: parti base de données :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         public void prendreDataNewServeur(string nomServer, string UserId, string _password, string _database)
         {
-            this.Nom_server = nomServer;
+            int prendre_index;
+            char symbol = Convert.ToChar(92);
+            prendre_index = nomServer.IndexOf(symbol);
+            string newname = nomServer.Insert(prendre_index, symbol.ToString());// varajouter '/' dans la chaine pour eviter de générer une erreur
+            this.Nom_server = newname;
             this.User_id = UserId;
             this.Password = _password;
             this.Database = _database;
@@ -74,7 +78,17 @@ namespace Examen.Classes
             da.DataSource = dt;
             deconnexionBDD();
         }
+        public void Selectionner (Control p, DataGridView d)
+        {
+            foreach (Control c in p.Controls)
+            {
+                if (c.GetType() == typeof(TextBox))
+                {
+                    c.Text = d.SelectedRows[0].Cells[c.Name].Value.ToString();
+                }
 
+            }
+        }
         public int nombreLignes(string champ, string table, string valeur)
         {
             req = "select count (*) from "+table+"where"+champ+"="+valeur;

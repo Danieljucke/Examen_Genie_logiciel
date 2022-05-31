@@ -125,5 +125,14 @@ namespace Examen.Forms
         {
             button6.BackColor = Color.FromArgb(24, 30, 54);
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            pnlNav.Height = button10.Height;
+            pnlNav.Top = button10.Top;
+            pnlNav.Left = button10.Left;
+            button10.BackColor = Color.FromArgb(46, 51, 73);
+            openPanel(new Payement());
+        }
     }
 }

@@ -44,6 +44,7 @@ namespace Examen.Forms
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.button10 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -106,6 +107,7 @@ namespace Examen.Forms
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.panel2.Controls.Add(this.button10);
             this.panel2.Controls.Add(this.pnlNav);
             this.panel2.Controls.Add(this.button6);
             this.panel2.Controls.Add(this.button5);
@@ -250,6 +252,21 @@ namespace Examen.Forms
             this.MainPanel.Size = new System.Drawing.Size(583, 588);
             this.MainPanel.TabIndex = 2;
             // 
+            // button10
+            // 
+            this.button10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button10.FlatAppearance.BorderSize = 0;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button10.ForeColor = System.Drawing.Color.DarkGray;
+            this.button10.Location = new System.Drawing.Point(0, 470);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(200, 50);
+            this.button10.TabIndex = 7;
+            this.button10.Text = "Payement";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
             // AdminDash
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -288,5 +305,6 @@ namespace Examen.Forms
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel pnlNav;
+        private System.Windows.Forms.Button button10;
     }
 }

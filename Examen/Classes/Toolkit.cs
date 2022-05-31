@@ -14,7 +14,7 @@ namespace Examen.Classes
         private string user_id;
         private string password;
         private string database;
-        private string chaine= "server =MELO\\JUCKE_MELO; User Id = sa; pwd = 0978; database=Examen";
+        private string chaine= ;
         public string Nom_server { get => nom_server; private set => nom_server = value; }
         public string User_id { get => user_id; private set => user_id = value; }
         public string Password { get => password; private set => password = value; }

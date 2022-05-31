@@ -69,5 +69,12 @@ namespace Examen.Forms
         {
             SalleBtn.BackColor = Color.FromArgb(24, 30, 54);
         }
+
+        private void CloseBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult reponse = MessageBox.Show("Do you really want to close the program?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (reponse == DialogResult.Yes)
+                Close();
+        }
     }
 }

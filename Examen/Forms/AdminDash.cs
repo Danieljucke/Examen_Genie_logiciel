@@ -109,7 +109,9 @@ namespace Examen.Forms
 
         private void button7_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult reponse = MessageBox.Show("Do you really want to close the program?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (reponse == DialogResult.Yes)
+                Close();
         }
 
         private void button6_Click(object sender, EventArgs e)

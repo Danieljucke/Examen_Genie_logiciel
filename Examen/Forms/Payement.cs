@@ -29,10 +29,10 @@ namespace Examen.Forms
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(comboBox1.Text) || string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox2.Text))
+            if (string.IsNullOrEmpty(comboBox1.Text) || string.IsNullOrEmpty(CNE.Text) || string.IsNullOrEmpty(Montant.Text))
                 MessageBox.Show("Aucun champ ne doit rester vide!");
             else
-                p.payer(comboBox1.Text,int.Parse(textBox2.Text),int.Parse(textBox1.Text));
+                p.payer(comboBox1.Text,int.Parse(Montant.Text),int.Parse(CNE.Text));
         }
     }
 }

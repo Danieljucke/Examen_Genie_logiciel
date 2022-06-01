@@ -18,6 +18,15 @@ namespace Examen.Forms
         public ConnexionPage()
         {
             InitializeComponent();
+
+        }
+        private Form activePanel = null;
+        private void openPanel(Form panelform)
+        {
+            if (activePanel != null)
+                activePanel.Close();
+            activePanel = panelform;
+            panelform.Show();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -100,5 +109,9 @@ namespace Examen.Forms
             }
         }
 
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            openPanel(new SignInPage());
+        }
     }
 }

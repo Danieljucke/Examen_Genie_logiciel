@@ -23,8 +23,10 @@ namespace Examen.Forms
             {
                 timer1.Enabled = false;
                 new ConnexionPage().Show();
+                //new DatabaseConnexion().Show();
                 this.Hide();
             }
+            
         }
     }
 }

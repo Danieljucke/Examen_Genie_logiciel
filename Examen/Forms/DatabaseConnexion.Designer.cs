@@ -31,10 +31,10 @@ namespace Examen
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.Server = new System.Windows.Forms.TextBox();
+            this.pwd = new System.Windows.Forms.TextBox();
+            this.Userid = new System.Windows.Forms.TextBox();
+            this.Nom = new System.Windows.Forms.TextBox();
             this.ConnectBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -68,46 +68,46 @@ namespace Examen
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // Server
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(634, 429);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(549, 40);
-            this.textBox1.TabIndex = 1;
+            this.Server.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.Server.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Server.Location = new System.Drawing.Point(634, 429);
+            this.Server.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.Server.Name = "Server";
+            this.Server.Size = new System.Drawing.Size(549, 40);
+            this.Server.TabIndex = 1;
             // 
-            // textBox2
+            // pwd
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Location = new System.Drawing.Point(634, 735);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(549, 40);
-            this.textBox2.TabIndex = 2;
-            this.textBox2.UseSystemPasswordChar = true;
+            this.pwd.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.pwd.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.pwd.Location = new System.Drawing.Point(634, 735);
+            this.pwd.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.pwd.Name = "pwd";
+            this.pwd.Size = new System.Drawing.Size(549, 40);
+            this.pwd.TabIndex = 2;
+            this.pwd.UseSystemPasswordChar = true;
             // 
-            // textBox3
+            // Userid
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Location = new System.Drawing.Point(634, 585);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(549, 40);
-            this.textBox3.TabIndex = 3;
+            this.Userid.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.Userid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Userid.Location = new System.Drawing.Point(634, 585);
+            this.Userid.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.Userid.Name = "Userid";
+            this.Userid.Size = new System.Drawing.Size(549, 40);
+            this.Userid.TabIndex = 3;
             // 
-            // textBox4
+            // Nom
             // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Location = new System.Drawing.Point(634, 951);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(549, 40);
-            this.textBox4.TabIndex = 4;
+            this.Nom.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.Nom.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Nom.Location = new System.Drawing.Point(634, 951);
+            this.Nom.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.Nom.Name = "Nom";
+            this.Nom.Size = new System.Drawing.Size(549, 40);
+            this.Nom.TabIndex = 4;
             // 
             // ConnectBtn
             // 
@@ -123,6 +123,7 @@ namespace Examen
             this.ConnectBtn.TabIndex = 5;
             this.ConnectBtn.Text = "Se connecter";
             this.ConnectBtn.UseVisualStyleBackColor = false;
+            this.ConnectBtn.Click += new System.EventHandler(this.ConnectBtn_Click);
             // 
             // label1
             // 
@@ -191,10 +192,10 @@ namespace Examen
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ConnectBtn);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Nom);
+            this.Controls.Add(this.Userid);
+            this.Controls.Add(this.pwd);
+            this.Controls.Add(this.Server);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
@@ -210,10 +211,10 @@ namespace Examen
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox Server;
+        private System.Windows.Forms.TextBox pwd;
+        private System.Windows.Forms.TextBox Userid;
+        private System.Windows.Forms.TextBox Nom;
         private System.Windows.Forms.Button ConnectBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

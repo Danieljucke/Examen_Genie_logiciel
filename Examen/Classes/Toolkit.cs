@@ -14,7 +14,7 @@ namespace Examen.Classes
         private string user_id;
         private string password;
         private string database;
-        private string chaine ;
+        private string chaine= "server =MELO\\JUCKE_MELO; User Id = sa; pwd = 0978; database=Examen";
         public string Nom_server { get => nom_server; private set => nom_server = value; }
         public string User_id { get => user_id; private set => user_id = value; }
         public string Password { get => password; private set => password = value; }
@@ -24,19 +24,22 @@ namespace Examen.Classes
         protected string req;
         protected SqlConnection connexion;
         protected SqlCommand _cmd;
+        //"server =MELO\\JUCKE_MELO; User Id = sa; pwd = 0978; database=Examen"
         //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: parti base de données :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         public void prendreDataNewServeur(string nomServer, string UserId, string _password, string _database)
         {
             int prendre_index;
             char symbol = Convert.ToChar(92);
             prendre_index = nomServer.IndexOf(symbol);
-            string newname = nomServer.Insert(prendre_index, symbol.ToString());// varajouter '/' dans la chaine pour eviter de générer une erreur
+            string newname = nomServer.Insert(prendre_index, symbol.ToString());// varajouter '\' dans la chaine pour eviter de générer une erreur
             this.Nom_server = newname;
             this.User_id = UserId;
             this.Password = _password;
             this.Database = _database;
-            this.Chaine = "server='" + this.Nom_server + "', User Id='" + this.User_id + "', pwd='" + this.Password + "'; database='" + this.Database + "'";
+            this.Chaine="server =" + this.Nom_server + "; User Id =" + this.User_id + "; pwd =" + this.Password + "; database=" + this.Database+"";
+            
         }
+       
 
         private void attribuer_chaine()
         {
@@ -51,7 +54,7 @@ namespace Examen.Classes
                 connexion.Open();
             return connexion;
         }
-        // ferme la connexion a la base de données
+        // ferme la connexion à la base de données
         public SqlConnection deconnexionBDD()
         {
             attribuer_chaine();
@@ -59,13 +62,14 @@ namespace Examen.Classes
                 connexion.Close();
             return connexion;
         }
+        //--------------------------------------------------------------------------------
         public SqlCommand commandeBDD(string requette)
         {
             _cmd = new SqlCommand(requette, connexionBaseDD());
             return _cmd;
         }
 
-
+        //---------------------------------------------------------------------------------
         public void AfficherDataGrid(string table, DataGridView da)
         {
             req = "select * from " + table;
@@ -78,6 +82,7 @@ namespace Examen.Classes
             da.DataSource = dt;
             deconnexionBDD();
         }
+        //-------------------------------------------------------------------------------------
         public void Selectionner (Control p, DataGridView d)
         {
             foreach (Control c in p.Controls)
@@ -89,6 +94,7 @@ namespace Examen.Classes
 
             }
         }
+        //----------------------------------------------------------------------------------------
         public int nombreLignes(string champ, string table, string valeur)
         {
             req = "select count (*) from "+table+"where"+champ+"="+valeur;
@@ -131,6 +137,7 @@ namespace Examen.Classes
                 MessageBox.Show(""+ex);
             }
         }
+
 //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: parti mot de passe ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
         // cette methode c'est pour convertir le mot de passe que l'utilisateur va saisir lors de son inregistremment

@@ -39,5 +39,10 @@ namespace Examen.Forms
             ClearTextBoxes();
             Id_module.Focus();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Hide();
+        }
     }
 }

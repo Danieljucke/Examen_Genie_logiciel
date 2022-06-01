@@ -37,23 +37,26 @@ namespace Examen.Forms
              else
              {
                  string check = con.connexion(richTextBox1.Text);
-                 if (string.IsNullOrEmpty(check))
+                string check_admi = t.DeconvertirMotdepasse(check);
+                if (string.IsNullOrEmpty(check))
                      MessageBox.Show("ce username n'existe pas ou est incorrect!");
-                 string check_admi = t.DeconvertirMotdepasse(check);
-                 if (richTextBox1.Text == "Admin" && check_admi == "Admin1234")
+                 
+                 if (richTextBox1.Text == "Admin" && check_admi == richTextBox2.Text)
                  {
                      new AdminDash().Show();
                      this.Hide();
                  }
                  else
                  {
-                     if (check.Equals(t.ConvertirMotdepasse(richTextBox2.Text)))
-                     {
-                         _from.Show();
-                         this.Hide();
-                     }
+                    if (check.Equals(t.ConvertirMotdepasse(richTextBox2.Text)))
+                    {
+                        _from.Show();
+                        this.Hide();
+                    }
+                    else
+                        MessageBox.Show("Mot de passe Ou Nom D'utilisateur Incorrect!");
                  }
-             }
+            }
         
         }
 
@@ -61,7 +64,7 @@ namespace Examen.Forms
         {
             DialogResult reponse = MessageBox.Show("Do you really want to close the program?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (reponse == DialogResult.Yes)
-                Close();
+                Environment.Exit(0);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -100,5 +103,10 @@ namespace Examen.Forms
             }
         }
 
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            new SignInPage().Show();
+            Hide();
+        }
     }
 }

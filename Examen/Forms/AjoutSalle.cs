@@ -45,5 +45,10 @@ namespace Examen.Forms
             ClearTextBoxes();
             id_salle.Focus();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Hide();
+        }
     }
 }

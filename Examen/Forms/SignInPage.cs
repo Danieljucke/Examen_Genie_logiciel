@@ -35,7 +35,9 @@ namespace Examen.Forms
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult reponse = MessageBox.Show("Do you really want to close the program?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (reponse == DialogResult.Yes)
+                Environment.Exit(0);
         }
 
         private void button1_Click(object sender, EventArgs e)

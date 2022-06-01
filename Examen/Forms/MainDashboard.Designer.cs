@@ -71,6 +71,7 @@ namespace Examen.Forms
             this.MinBtn.Size = new System.Drawing.Size(102, 107);
             this.MinBtn.TabIndex = 2;
             this.MinBtn.UseVisualStyleBackColor = true;
+            this.MinBtn.Click += new System.EventHandler(this.MinBtn_Click);
             // 
             // MaxBtn
             // 
@@ -84,6 +85,7 @@ namespace Examen.Forms
             this.MaxBtn.Size = new System.Drawing.Size(102, 107);
             this.MaxBtn.TabIndex = 1;
             this.MaxBtn.UseVisualStyleBackColor = true;
+            this.MaxBtn.Click += new System.EventHandler(this.MaxBtn_Click);
             // 
             // CloseBtn
             // 
@@ -137,6 +139,7 @@ namespace Examen.Forms
             this.LogOutBtn.TabIndex = 4;
             this.LogOutBtn.Text = "Déconnexion";
             this.LogOutBtn.UseVisualStyleBackColor = true;
+            this.LogOutBtn.Click += new System.EventHandler(this.LogOutBtn_Click);
             // 
             // SalleBtn
             // 
@@ -231,6 +234,7 @@ namespace Examen.Forms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.Name = "MainDashboard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DashboardProf";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

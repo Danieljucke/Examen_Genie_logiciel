@@ -59,5 +59,10 @@ namespace Examen.Forms
             mod.AjouterModule(Nom_Module.Text, int.Parse(Moyenne_generale.Text), int.Parse(charge_horaire.Text), int.Parse(id_classe.Text));
             dataGridView1.Refresh();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Hide();
+        }
     }
 }

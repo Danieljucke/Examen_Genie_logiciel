@@ -56,5 +56,10 @@ namespace Examen.Forms
             prof.ModifierProf(CIN.Text, Nom.Text, Postnom.Text, Prenom.Text, Convert.ToChar(Sexe.Text), DateNaissance.Text, Adresse.Text, telephone.Text, Email.Text, Titre.Text);
             dataGridView1.Refresh();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Hide();
+        }
     }
 }

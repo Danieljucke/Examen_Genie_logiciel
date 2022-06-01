@@ -226,6 +226,7 @@ namespace Examen.Forms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.Name = "AjoutCours";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AjoutCours";
             this.Load += new System.EventHandler(this.AjoutCours_Load);
             this.ResumeLayout(false);

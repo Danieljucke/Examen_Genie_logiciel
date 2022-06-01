@@ -200,6 +200,7 @@ namespace Examen
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.Name = "DatabaseConnexion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

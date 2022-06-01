@@ -65,6 +65,7 @@ namespace Examen.Forms
             this.button1.Size = new System.Drawing.Size(129, 112);
             this.button1.TabIndex = 1;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -199,6 +200,7 @@ namespace Examen.Forms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.Name = "AjoutSalle";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AjoutSalle";
             this.ResumeLayout(false);
             this.PerformLayout();

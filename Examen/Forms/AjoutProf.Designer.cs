@@ -78,6 +78,7 @@ namespace Examen.Forms
             this.button1.Size = new System.Drawing.Size(126, 126);
             this.button1.TabIndex = 1;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // CIN
             // 
@@ -361,6 +362,7 @@ namespace Examen.Forms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.Name = "AjoutProf";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AjoutProf";
             this.Load += new System.EventHandler(this.AjoutProf_Load);
             this.ResumeLayout(false);

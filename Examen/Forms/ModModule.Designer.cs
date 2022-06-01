@@ -38,6 +38,8 @@ namespace Examen.Forms
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.Moyenne_generale = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,8 +48,6 @@ namespace Examen.Forms
             this.Nom_Module = new System.Windows.Forms.TextBox();
             this.id_module = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.Moyenne_generale = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -76,6 +76,7 @@ namespace Examen.Forms
             this.button3.TabIndex = 1;
             this.button3.Text = "Close";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label1
             // 
@@ -179,6 +180,26 @@ namespace Examen.Forms
             this.panel3.Size = new System.Drawing.Size(1044, 391);
             this.panel3.TabIndex = 3;
             // 
+            // Moyenne_generale
+            // 
+            this.Moyenne_generale.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.Moyenne_generale.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Moyenne_generale.Location = new System.Drawing.Point(678, 311);
+            this.Moyenne_generale.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.Moyenne_generale.Name = "Moyenne_generale";
+            this.Moyenne_generale.Size = new System.Drawing.Size(197, 40);
+            this.Moyenne_generale.TabIndex = 9;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 11.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(500, 304);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(175, 50);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Moyenne";
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -261,26 +282,6 @@ namespace Examen.Forms
             this.label2.TabIndex = 0;
             this.label2.Text = "ID Module";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 11.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(500, 304);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(175, 50);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Moyenne";
-            // 
-            // Moyenne_generale
-            // 
-            this.Moyenne_generale.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.Moyenne_generale.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Moyenne_generale.Location = new System.Drawing.Point(678, 311);
-            this.Moyenne_generale.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            this.Moyenne_generale.Name = "Moyenne_generale";
-            this.Moyenne_generale.Size = new System.Drawing.Size(197, 40);
-            this.Moyenne_generale.TabIndex = 9;
-            // 
             // ModModule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
@@ -294,6 +295,7 @@ namespace Examen.Forms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.Name = "ModModule";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ModModule";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

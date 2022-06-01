@@ -61,5 +61,10 @@ namespace Examen.Forms
             st.AddStudent(CNE.Text, Nom.Text, Postnom.Text, Prenom.Text, Convert.ToChar(Sexe.Text), DateNaissance.Text, Adresse.Text, telephone.Text, Email.Text, int.Parse(Frais.Text), AnneeObtentionBac.Text, int.Parse(id_option.Text), int.Parse(id_parcours.Text));
             dataGridView1.Refresh();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Hide();
+        }
     }
 }

@@ -74,7 +74,28 @@ namespace Examen.Forms
         {
             DialogResult reponse = MessageBox.Show("Do you really want to close the program?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (reponse == DialogResult.Yes)
-                Close();
+                Environment.Exit(0);
+        }
+
+        private void LogOutBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult reponse = MessageBox.Show("Do you really want to log out ?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (reponse == DialogResult.Yes)
+            {
+                new ConnexionPage().Show();
+                Hide();
+            }
+            
+        }
+
+        private void MaxBtn_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Maximized;
+        }
+
+        private void MinBtn_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
         }
     }
 }

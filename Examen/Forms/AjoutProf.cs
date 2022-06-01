@@ -56,5 +56,10 @@ namespace Examen.Forms
             ClearTextBoxes();
             CIN.Focus();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Hide();
+        }
     }
 }

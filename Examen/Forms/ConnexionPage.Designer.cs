@@ -30,7 +30,7 @@ namespace Examen.Forms
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.Login = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -39,8 +39,6 @@ namespace Examen.Forms
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -50,7 +48,7 @@ namespace Examen.Forms
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.checkBox1);
+            this.panel1.Controls.Add(this.linkLabel2);
             this.panel1.Controls.Add(this.linkLabel1);
             this.panel1.Controls.Add(this.Login);
             this.panel1.Controls.Add(this.label3);
@@ -64,17 +62,17 @@ namespace Examen.Forms
             this.panel1.Size = new System.Drawing.Size(1426, 1184);
             this.panel1.TabIndex = 0;
             // 
-            // checkBox1
+            // linkLabel2
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkBox1.Location = new System.Drawing.Point(265, 760);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(229, 50);
-            this.checkBox1.TabIndex = 9;
-            this.checkBox1.Text = "Se souvenir";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.linkLabel2.Location = new System.Drawing.Point(265, 762);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(229, 46);
+            this.linkLabel2.TabIndex = 9;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Inscription Ici!";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
             // linkLabel1
             // 
@@ -168,8 +166,6 @@ namespace Examen.Forms
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.btnClose);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -177,35 +173,6 @@ namespace Examen.Forms
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1928, 93);
             this.panel2.TabIndex = 1;
-            // 
-            // button3
-            // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Image = global::Examen.Properties.Resources.round_minimize_black_24pt_1x;
-            this.button3.Location = new System.Drawing.Point(1622, 0);
-            this.button3.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(102, 93);
-            this.button3.TabIndex = 2;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = global::Examen.Properties.Resources.round_maximize_black_24pt_1x;
-            this.button2.Location = new System.Drawing.Point(1724, 0);
-            this.button2.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(102, 93);
-            this.button2.TabIndex = 1;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnClose
             // 
@@ -266,11 +233,9 @@ namespace Examen.Forms
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Login;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.LinkLabel linkLabel2;
     }
 }

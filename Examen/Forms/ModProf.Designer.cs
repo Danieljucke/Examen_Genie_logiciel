@@ -88,6 +88,7 @@ namespace Examen.Forms
             this.button3.TabIndex = 1;
             this.button3.Text = "Close";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label1
             // 
@@ -446,6 +447,7 @@ namespace Examen.Forms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.Name = "ModProf";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ModProf";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -391,6 +391,7 @@ namespace Examen.Forms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.Name = "AjoutEtudiant";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AjoutEtudiant";
             this.Load += new System.EventHandler(this.AjoutEtudiant_Load);
             this.ResumeLayout(false);

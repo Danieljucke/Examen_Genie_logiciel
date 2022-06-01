@@ -55,5 +55,10 @@ namespace Examen.Forms
             s.ModifierSalle(int.Parse(id_salle.Text), Nom_Salle.Text, Type_Salle.Text, int.Parse(Capacite.Text));
             dataGridView1.Refresh();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Hide();
+        }
     }
 }

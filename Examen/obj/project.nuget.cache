@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KmnHDAYZdhlBO28axbEm5/SQQxQZtGM+f0YsPuapA1W0pbGriO37DiwbMeZcPdfczVisvScUuq1TYB9RCJzs1Q==",
+  "dgSpecHash": "erKzqwy3A4OPzXf/PD1xWqFL1Bi/qcszxjZ+WV0TFPXtJ4TEVegjHbjtr9hkTbCSKSx4kTCHdkcqQPoiQNpcYg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jucke\\Downloads\\Examen\\Examen.csproj",
+  "projectFilePath": "C:\\Users\\jucke\\Downloads\\Examen_Genie_logiciel-main (1)\\Examen_Genie_logiciel-main\\Examen\\Examen.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jucke\\.nuget\\packages\\circularprogressbar\\2.8.0.16\\circularprogressbar.2.8.0.16.nupkg.sha512",
     "C:\\Users\\jucke\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",

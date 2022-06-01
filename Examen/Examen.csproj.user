@@ -28,9 +28,6 @@
     <Compile Update="Forms\DatabaseConnexion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Forms\LandingPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,9 +98,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\SuppSalle.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Forms\UserInfos.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

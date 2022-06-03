@@ -26,7 +26,7 @@ namespace Examen.Classes
         string Phone;
         string Birthdate;
         string Level;
-        public Etudiant()
+        public Student()
         {
 
             Cne = "00000";
@@ -42,7 +42,7 @@ namespace Examen.Classes
             Level = "bac1";
         }
 
-        public void AddStudent(string cne, string nom, string postnom, string prenom, char sex, string birthdate, string adresse, string telephone , string mail, int frais , string annebac, int id_option, int id_parcours)
+        public void AddStudent(int cne, string nom, string postnom, string prenom, char sex, string birthdate, string adresse, string telephone, string mail, int frais, string annebac, int id_option, int id_parcours)
         {
 
             /*Cne = cne;
@@ -56,7 +56,7 @@ namespace Examen.Classes
             Phone = phone;
             Birthdate = birthdate;
             Level = level;*/
-            requette = "insert into etudiant values ('" + cne + "','" + nom + "','" + postnom + "','" + prenom + "','" + sex + "','" + adresse + "','" + telephone + "','" + mail + "','" + frais + "','" + annebac + "','" + id_option + "','"+id_parcours+"')";
+            requette = "insert into etudiant values (" + cne + ",'" + nom + "','" + postnom + "','" + prenom + "','" + sex + "','" + adresse + "','" + telephone + "','" + mail + "'," + frais + ",'" + annebac + "'," + id_option + "," + id_parcours + ")";
             try
             {
                 compte = t.commandeBDD(requette).ExecuteNonQuery();
@@ -71,9 +71,9 @@ namespace Examen.Classes
             }
             t.deconnexionBDD();
         }
-        public void ModifierEtudiant(string valeur, string nom)
+        public void ModifierEtudiant(int cne, string nom, string postnom, string prenom, char sex, string birthdate, string adresse, string telephone, string mail, int frais, string annebac, int id_option, int id_parcours)
         {
-            requette = "update etudiant set nom ='" + valeur + "' where nom= '" + nom + "'";
+            requette = "update etudiant set nom ='" +nom + "', '"+postnom+"', '"+prenom+"', '"+sex+"', '"+birthdate+"', '"+adresse+"', '"+telephone+"', '"+mail+"', "+frais+",'"+annebac+"', "+id_option+", "+id_parcours+" where CNE= '" + cne+ "'";
             try
             {
                 compte = t.commandeBDD(requette).ExecuteNonQuery();
@@ -95,7 +95,7 @@ namespace Examen.Classes
 
         public void SupprimerEtudiant(int cne)
         {
-            requette = "delete from etudiant where id='" + cne + "'";
+            requette = "delete from etudiant where id=" + cne;
             DialogResult re = MessageBox.Show("Voulez-vous vraiment supprimer ce parcous", "Confirmation", MessageBoxButtons.YesNoCancel);
             if (re == DialogResult.Yes)
             {
@@ -113,6 +113,5 @@ namespace Examen.Classes
                 }
             }
         }
-
     }
 }

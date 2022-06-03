@@ -9,21 +9,21 @@ namespace Examen.Classes
     {
         protected string requete;
         Toolkit t = new Toolkit();
-        public void payer(string type, int montatapayer,int cne)
+        public void payer(string type, int montatapayer, int cne)
         {
-            int nbfacture=t.nextcode("PayementFrais", "numero_facture"); 
-            requete = "insert into PayementFrais values ('"+nbfacture+"','"+type+"','"+montatapayer+"', '"+cne+"')";
-            
+            int nbfacture = t.nextcode("PayementFrais", "numero_facture");
+            requete = "insert into PayementFrais values (" + nbfacture + ",'" + type + "'," + montatapayer + ", " + cne + ")";
+
             int compte = t.commandeBDD(requete).ExecuteNonQuery();
             if (compte < 0)
                 MessageBox.Show("Payement Non Effectué");
             else
-                MessageBox.Show("Payement Effectué et voici le numero de facture "+nbfacture);
+                MessageBox.Show("Payement Effectué et voici le numero de facture " + nbfacture);
         }
-        public void calculMontant (string cne )
+        public void calculMontant(int cne)
         {
             int solde = 0;
-            requete = "select frais from etudiant where CNE='"+cne+"'";
+            requete = "select frais from etudiant where CNE=" + cne;
             try
             {
                 SqlDataReader r = t.commandeBDD(requete).ExecuteReader();
@@ -35,14 +35,13 @@ namespace Examen.Classes
                 {
                     int aPayer = 2000 - solde;
                     MessageBox.Show("il vous reste à payer " + aPayer + " pour solder les frais!");
-                } 
-                    
+                }
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("" + ex);
             }
         }
-
     }
 }

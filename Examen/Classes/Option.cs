@@ -8,13 +8,13 @@ namespace Examen.Classes
 {
     class Option
     {
-        protected string requette;
+         protected string requette;
         protected int compte;
         Toolkit t = new Toolkit();
-        public void AjouterOption(string nom_option)
+        public void AjouterOption(int id ,string nom_option)
         {
-
-            requette = "insert into Options values ('" + nom_option + "')";
+            id = t.nextcode("Options", "id_option");
+            requette = "insert into Options values ("+id+",'" + nom_option + "')";
 
             try
             {
@@ -33,7 +33,7 @@ namespace Examen.Classes
         public void ModifierOption(int id, string nom)
         {
 
-            requette = "update Options set Nom_option ='" + nom + "' where id_option= '" + id + "'";
+            requette = "update Options set Nom_option ='" + nom + "' where id_option= " + id ;
             try
             {
                 compte = t.commandeBDD(requette).ExecuteNonQuery();
@@ -52,9 +52,9 @@ namespace Examen.Classes
             }
             t.deconnexionBDD();
         }
-        public void SupprimerOption(int id )
+        public void SupprimerOption(int id)
         {
-            requette = "delete from Options where id_option='" + id + "'";
+            requette = "delete from Options where id_option=" + id ;
             DialogResult re = MessageBox.Show("Vouslez vous vraiment supprimer cette Option", "Question", MessageBoxButtons.YesNoCancel);
             if (re == DialogResult.Yes)
             {

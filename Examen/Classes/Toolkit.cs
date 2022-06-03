@@ -9,12 +9,12 @@ namespace Examen.Classes
 {
     class Toolkit
     {
-        //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: parti variables :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+         //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: parti variables :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         protected string nom_server;
         private string user_id;
         private string password;
         private string database;
-        private string chaine= "server =MELO\\JUCKE_MELO; User Id = sa; pwd = 0978; database=Examen";
+        private string chaine = "server =MELO\\JUCKE_MELO; User Id = sa; pwd = 0978; database=Examen";
         public string Nom_server { get => nom_server; private set => nom_server = value; }
         public string User_id { get => user_id; private set => user_id = value; }
         public string Password { get => password; private set => password = value; }
@@ -36,17 +36,17 @@ namespace Examen.Classes
             this.User_id = UserId;
             this.Password = _password;
             this.Database = _database;
-            this.Chaine="server =" + this.Nom_server + "; User Id =" + this.User_id + "; pwd =" + this.Password + "; database=" + this.Database+"";
-            
+            this.Chaine = "server =" + this.Nom_server + "; User Id =" + this.User_id + "; pwd =" + this.Password + "; database=" + this.Database + "";
+
         }
-       
+
 
         private void attribuer_chaine()
         {
             connexion = new SqlConnection(chaine);
         }
         // a la place de créer des connexion dans toutes les classe il suffira de faire appel a cette methode pour créer une connexion avec la base de données 
-       
+
         public SqlConnection connexionBaseDD()
         {
             attribuer_chaine();
@@ -83,13 +83,23 @@ namespace Examen.Classes
             deconnexionBDD();
         }
         //-------------------------------------------------------------------------------------
-        public void Selectionner (Control p, DataGridView d)
+        public void Selectionner(Control p, DataGridView d)
         {
             foreach (Control c in p.Controls)
             {
                 if (c.GetType() == typeof(TextBox))
                 {
-                    c.Text = d.SelectedRows[0].Cells[c.Name].Value.ToString();
+                    if (c.Name == "confpwd")
+                        continue;
+                    else
+                        if (d.SelectedRows.Count!=0)
+                            c.Text = d.SelectedRows[0].Cells[c.Name].Value.ToString();
+                        else
+                        {
+                            MessageBox.Show("Veuillez Selectionner une case du datagrid !");
+                            break;
+                        }
+                            
                 }
 
             }
@@ -97,7 +107,7 @@ namespace Examen.Classes
         //----------------------------------------------------------------------------------------
         public int nombreLignes(string champ, string table, string valeur)
         {
-            req = "select count (*) from "+table+"where"+champ+"="+valeur;
+            req = "select count (*) from " + table + "where" + champ + "=" + valeur;
             connexionBaseDD();
             int compte = int.Parse(commandeBDD(req).ExecuteScalar().ToString());
             return compte;
@@ -122,23 +132,23 @@ namespace Examen.Classes
             deconnexionBDD();
         }
         // cette fonction va creer le mot de passe par defaut de l'adminstrateur dès la première ouverture de l'appliction et va lui retourner le password et le username pour qu'il se connecte 
-        public void CreerAdmiAcess ()
+        public void CreerAdmiAcess()
         {
             string cont = ConvertirMotdepasse("Admin1234");
-            req = "insert into Connexion values('Admin','"+ cont +"','@admin.com')";
+            req = "insert into Connexion values('Admin'," + cont + ",'@admin.com')";
             try
             {
                 int compte = commandeBDD(req).ExecuteNonQuery();
                 if (compte > 0)
-                    MessageBox.Show("bonjour Mr/Me l'administrateur votre Mot de passe par defaut est "+ DeconvertirMotdepasse(cont) +" et le nom d'utilisateur est Admin");
+                    MessageBox.Show("bonjour Mr/Me l'administrateur votre Mot de passe par defaut est " + DeconvertirMotdepasse(cont) + " et le nom d'utilisateur est Admin");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show(""+ex);
+                MessageBox.Show("" + ex);
             }
         }
 
-//::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: parti mot de passe ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: parti mot de passe ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
         // cette methode c'est pour convertir le mot de passe que l'utilisateur va saisir lors de son inregistremment
         public string ConvertirMotdepasse(string password)
@@ -170,10 +180,10 @@ namespace Examen.Classes
             return resultat;
         }
         // va chercher s'il y a deja un username avec ce nom 
-        public string checkuser (string username)
+        public string checkuser(string username)
         {
             req = "select Username from Connexion where Username='" + username + "'";
-            string recuperer="";
+            string recuperer = "";
             try
             {
                 SqlDataReader r = commandeBDD(req).ExecuteReader();
@@ -181,60 +191,68 @@ namespace Examen.Classes
                 {
                     recuperer = r.GetString(0);
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return recuperer;
         }
 
-//::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: partie outils :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-        
+        //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: partie outils :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
         // cette fonction va incrementer de 1  chaque id lors d'un ajout dans une table quelconque 
         //elle se prensentera comme suit ex: cne = nextcode(etduiant,cne);
+//-----------------------------------------------------------------------------------------------------------
         public int nextcode(string table, string key)
         {
-            string requete= "SELECT MAX("+key+") + 1 FROM "+table;
-            int lastcode=0;
-            int next_code=0;
+            string requete = "SELECT MAX(" + key + ") FROM " + table;
+            int lastcode = 0;
+            int next_code = 0;
             try
             {
                 SqlDataReader r = commandeBDD(requete).ExecuteReader();
                 while (r.Read())
                     lastcode = int.Parse(r.GetValue(0).ToString());
-            if (lastcode == 0)
-                next_code = 0;
-            else
-                next_code = lastcode + 1;
+                if (lastcode == 0)
+                    next_code = 1;
+                else
+                    next_code = lastcode + 1;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return next_code;
         }
         // cette fonction va faire en sorte de charger les forms sur panel 
-        public void chargerForm (Form f, Panel p)
+        public void chargerForm(Form f, Panel p)
         {
             if (p.Controls.Count > 0)
                 p.Controls.RemoveAt(0);
-            
+
             f.TopLevel = false;
             f.Dock = DockStyle.Fill;
             p.Controls.Add(f);
             p.Tag = f;
             f.Show();
         }
-        // cette fonction va effacer tous les text box qui se trouvent dans un panel 
-        
-        public void rechercher(string id, Form f)
+
+        public bool checkText(Control p)
         {
-            string requete = "select * from  where id_";
-            SqlDataReader lire = commandeBDD(requete).ExecuteReader();
-            while (lire.Read())
+            bool f = false;
+            foreach (Control ct in p.Controls)
             {
-                f.Text = "";
+                if (ct.GetType() == typeof(TextBox))
+                {
+                    if (string.IsNullOrEmpty(ct.Text))
+                    {
+                        f = true;
+                    }
+
+                }
             }
+            return f;
         }
     }
 }

@@ -7,23 +7,15 @@ namespace Examen.Classes
 {
     class Salle
     {
-        protected string requette;
+         protected string requette;
         protected int compte;
         Toolkit t = new Toolkit();
-
-        // Attributs
-        int id;
-        string Nom;
-        string Type;
-        int Capacite;
         //rajouter l'attribut Cours
-
-
         // Méthodes
-        public void AjouterSalle(string nom,string type, int capacite)
+        public void AjouterSalle(string nom, string type, int capacite)
         {
-            int id=t.nextcode("salle","id_salle");
-            requette = "insert into salle values ('" + id + "','" + type + "','" + capacite + "')";
+            int id=t.nextcode("Salle","id_salle");
+            requette = "insert into salle values (" + id + ",'"+nom+"','" + type + "'," + capacite + ")";
             try
             {
                 compte = t.commandeBDD(requette).ExecuteNonQuery();
@@ -40,7 +32,7 @@ namespace Examen.Classes
         }
         public void ModifierSalle(int id, string nom, string type, int capacite)
         {
-            requette ="update salle set Nom_salle='"+nom+"', Type_salle='"+type+"', capacite='"+capacite+"' where id_salle='"+id+"'";
+            requette = "update salle set Nom_salle='" + nom + "', Type_salle='" + type + "', capacite=" + capacite + " where id_salle=" + id ;
             try
             {
                 compte = t.commandeBDD(requette).ExecuteNonQuery();
@@ -58,7 +50,7 @@ namespace Examen.Classes
         }
         public void SupprimerSalle(int id)
         {
-            requette = "delete from salle where id='" + id + "'";
+            requette = "delete from salle where id_salle=" + id ;
 
             DialogResult re = MessageBox.Show("Vouslez vous vraiment supprimer ce parcous", "Confirmation", MessageBoxButtons.YesNoCancel);
             if (re == DialogResult.Yes)

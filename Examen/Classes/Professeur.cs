@@ -7,10 +7,10 @@ namespace Examen.Classes
 {
     class Professeur
     {
-        protected string requette;
+         protected string requette;
         protected int compte;
         Toolkit t = new Toolkit();
-
+/*
         // Attributs
 
         string Cin;
@@ -40,13 +40,13 @@ namespace Examen.Classes
             Phone = "None";
             Birthdate = "None";
             title = "None";
-        }
+        }*/
 
 
         // Méthodes
-        public void AjouterProf(string cin, string nom, string postnom, string prenom, char sex, string birthday, string adresse, string telephone, string email,string titre )
+        public void AjouterProf(int cin, string nom, string postnom, string prenom, char sex, string birthday, string adresse, string telephone, string email, string titre)
         {
-            requette = "insert into Professeur values ()";
+            requette = "insert into Professeur values ("+cin+",'"+nom+"','"+postnom+"','"+prenom+"','"+sex+"','"+birthday+"','"+adresse+"','"+telephone+"','"+email+"','"+titre+"')";
             try
             {
                 compte = t.commandeBDD(requette).ExecuteNonQuery();
@@ -55,14 +55,14 @@ namespace Examen.Classes
                 else
                     MessageBox.Show("Enregistrement Reussi!");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("" + ex);
             }
         }
-        public void ModifierProf(string cin, string nom, string postnom, string prenom, char sex, string birthday, string adresse, string telephone, string email, string titre)
+        public void ModifierProf(int cin, string nom, string postnom, string prenom, char sex, string birthday, string adresse, string telephone, string email, string titre)
         {
-            requette = "Update Professeur set Nom='"+nom+"', Postnom='"+postnom+"', Prenom= '"+prenom+"', Sexe='"+sex+"', DateNaissance='"+birthday+"', Adresse='"+adresse+"', telephone ='"+telephone+"', email='"+email+"', titre='"+titre+"' where CIN='"+cin+"'";
+            requette = "Update Professeur set Nom='" + nom + "', Postnom='" + postnom + "', Prenom= '" + prenom + "', Sexe='" + sex + "', DateNaissance='" + birthday + "', Adresse='" + adresse + "', telephone ='" + telephone + "', email='" + email + "', titre='" + titre + "' where CIN=" + cin;
             try
             {
                 compte = t.commandeBDD(requette).ExecuteNonQuery();
@@ -76,11 +76,11 @@ namespace Examen.Classes
                 MessageBox.Show("" + ex);
             }
         }
-        public void SupprimerProf(string cin)
+        public void SupprimerProf(int cin)
         {
-            requette = "delete from Professeur where CIN='"+cin+"'";
-            DialogResult r= MessageBox.Show("voulez vous supprimer cet professeur","CONFIRMATION",MessageBoxButtons.YesNo);
-            if (r==DialogResult.Yes)
+            requette = "delete from Professeur where CIN=" + cin;
+            DialogResult r = MessageBox.Show("voulez vous supprimer cet professeur", "CONFIRMATION", MessageBoxButtons.YesNo);
+            if (r == DialogResult.Yes)
             {
                 try
                 {
@@ -96,6 +96,5 @@ namespace Examen.Classes
                 }
             }
         }
-        
     }
 }
